@@ -14,6 +14,10 @@ A solution set is:
 [2, 6] 
 [1, 1, 6] 
 */
+#include<iostream>
+#include<algorithm>
+
+using namespace std;
 
 /*1-mySoltion:*/
 //深度优先法 递归
@@ -54,3 +58,11 @@ private:
 		}
 	}
 };
+
+int main() {
+	Solution A;
+	vector<vector<int>> tmp;
+	vector<int> candidates = {1, 1, 1}, t;
+	tmp = A.combinationSum2(candidates, 1);
+	return 0;
+}

@@ -12,7 +12,9 @@ A solution set is:
 [7] 
 [2, 2, 3] 
 */
-
+#include<iostream>
+#include<algorithm>
+using namespace std;
 
 /*1-mySolution:*/
 //递归法 深度优先算法 时间复杂度n! 空间复杂度n
@@ -43,3 +45,12 @@ private:
 		}
 	}
 };
+
+
+int main() {
+	Solution A;
+	vector<vector<int>> tmp;
+	vector<int> candidates = {1, 1, 1}, t;
+	tmp = A.combinationSum(candidates, 1);
+	return 0;
+}
