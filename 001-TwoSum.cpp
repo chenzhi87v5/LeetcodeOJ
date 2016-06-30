@@ -48,8 +48,7 @@ int main()
 {
 	int nums[4] = {2, 7, 11, 15};
 	vector<int> num(nums, nums+4);
-	int target = 9;
-	
+	int target = 9;	
 	Solution test;
 	
 	vector<int> res = test.twoSum(num, target);

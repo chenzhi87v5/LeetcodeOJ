@@ -9,7 +9,9 @@ Note: You may not slant the container.
 
 /*2-Answers: 时间复杂度n*/
 //每个容器的面积取决于最短的木板 只需要一个循环足矣
-//定义start和end两个指针分别指向数组的左右两端，然后两个指针向中间搜索，每移动一次算一个值和结果比较取较大的，容器装水量的算法长乘以宽
+
+//定义start和end两个指针分别指向数组的左右两端，然后两个指针向中间搜索，每移动一次算一个值和结果比较取较大的
+//容器装水量的算法长乘以宽
 class Solution {
 public:
 	int maxArea(vector<int>& height) {

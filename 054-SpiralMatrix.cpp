@@ -1,3 +1,4 @@
+//Spiral Matrix 螺旋矩阵
 /*
 Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.
 
@@ -17,12 +18,11 @@ You should return [1,2,3,6,9,8,7,4,5].
 #include<vector>
 using namespace std;
 
-//1-:模拟螺旋读
+//1-:模拟读取螺旋矩阵
 class Solution {
 public:
 	vector<int> spiralOrder(vector<vector<int>>& matrix) {
 		vector<int> result;
-		
 		if (matrix.empty())
 			return result;
 		
@@ -58,8 +58,7 @@ public:
 	}
 };
 
-
-
+//Test main函数
 int main() {
 	Solution A;
 	vector<vector<int>> matrix;

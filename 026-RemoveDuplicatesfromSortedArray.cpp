@@ -1,6 +1,6 @@
+//Remove Duplicates from Sorted Array 有序数组中去除重复项
 /*
 Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
-
 Do not allocate extra space for another array, you must do this in place with constant memory.
 
 For example,
@@ -10,7 +10,6 @@ Your function should return length = 2, with the first two elements of nums bein
 */
 
 /*1-mySolution:*/
-//直接使用STL
 class Solution {
 public:
 	int removeDuplicates(vector<int>& nums) {
@@ -23,16 +22,16 @@ public:
 		/*return distance(nums.begin(), unique(nums.begin(), nums.end()));
 		 */
 
-		//解法三  不使用STL 
-		if (nums.size() == 0)
-			return 0;
-		if (nums.size() == 1)
-			return 1;
+		//解法三  不使用STL  双指针解决(下标) 
+		if (nums.size() <= 1)
+			return nums.size();
+		
 		int index = 0;
 		for (int i = 1; i < nums.size(); i++) {
 			if (nums[index] != nums[i])
 				nums[++index] = nums[i];
 		}
+
 		return index + 1;
 	}
 };
