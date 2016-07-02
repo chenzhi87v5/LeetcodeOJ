@@ -1,39 +1,25 @@
+//Unique Paths 不同的路径
 /*
 A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
-
 The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
-
 How many possible unique paths are there?
+图
 */
 
-//1-:
-//深度优先搜索法 纯深搜小集合可以过，大集合超时 时间复杂度n^4 空间复杂度n^2
-
-//2-:备忘录法：缓存思想
-//深搜 + 缓存 时间复杂度n^2 空间复杂度n^2
+/*
+这道题让求所有不同的路径的个数，一开始还真把我难住了，因为之前好像没有遇到过这类的问题，所以感觉好像有种无从下手的感觉。在网上找攻略之后才恍然大悟，原来这跟之前那道 Climbing Stairs 爬梯子问题 很类似，那道题是说可以每次能爬一格或两格，问到达顶部的所有不同爬法的个数。而这道题是每次可以向下走或者向右走，求到达最右下角的所有不同走法的个数。那么跟爬梯子问题一样，我们需要用动态规划Dynamic Programming来解，我们可以维护一个二维数组dp，其中dp[i][j]表示到当前位置不同的走法的个数，然后可以得到递推式为: dp[i][j] = dp[i - 1][j] + dp[i][j - 1]，这里为了节省空间，我们使用一维数组dp，一行一行的刷新也可以，代码如下：
+*/
 class Solution {
 public:
 	int uniquePaths(int m, int n) {
-		// 0行 0列未使用
-		this->f = vector<vector<int>> (m + 1, vector<int>(n + 1, 0));
-		return dfs(m, n);
-	}
-private:
-	vector<vector<int>> f; //缓存
+		vector<int> dp(n, 1);
+		
+		for (int i = 1; i < m; i++) {
+			for (int j = 1; j < n; j++) {
+				dp[j] += dp[j - 1];
+			}
+		}
 
-	int dfs(int x, int y) { 
-		if (x < 1 || y < 1)  //数据非法,终止条件
-			return 0;
-		if (x == 1 || y == 1)  //回到起点，收敛条件
-			return 1;
-
-		return getOrUpdate(x - 1, y) + getOrUpdate(x, y - 1);
-	}
-
-	int getOrUpdate(int x, int y) {
-		if (f[x][y] > 0)
-			return f[x][y];
-		else
-			return f[x][y] = dfs(x, y);
+		return dp[n - 1];
 	}
 };

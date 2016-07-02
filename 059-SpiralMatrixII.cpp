@@ -1,3 +1,4 @@
+//Spiral Matrix II 螺旋矩阵之二
 /*
 Given an integer n, generate a square matrix filled with elements from 1 to n2 in spiral order.
 
@@ -12,8 +13,7 @@ You should return the following matrix:
 ]
 */
 
-//1-按照题意螺旋处理
-
+//按照题意螺旋处理 螺旋矩阵之一 类似一个是读 现在是写
 class Solution {
 public:
 	vector<vector<int>> generateMatrix(int n) {
