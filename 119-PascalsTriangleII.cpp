@@ -1,6 +1,6 @@
+//Pascal's Triangle II 杨辉三角之二
 /*
 Given an index k, return the kth row of the Pascal's triangle.
-
 For example, given k = 3,
 Return [1,3,3,1].
 
@@ -9,15 +9,16 @@ Note:
 */
 
 //1-: 两个vector ，一个记录当前行，一个记录上一行
+//新行只依赖于上一行 
 class Solution {
 public:
 	vector<int> getRow(int rowIndex) {
 		if (rowIndex <= 1)
 			return vector<int>(rowIndex + 1, 1);
 		
-		vector<int> result(2, 1);
+		vector<int> result(2, 1);                    //记录结果行
 		for (int i = 3; i <= rowIndex + 1; i++) {
-			vector<int> current(i ,1);       //记录当前计算行
+			vector<int> current(i ,1);           //记录当前计算行current
 			for(int j = 1; j < i - 1; j++)
 				current[j] = result[j - 1] + result[j];
 			result = current;
