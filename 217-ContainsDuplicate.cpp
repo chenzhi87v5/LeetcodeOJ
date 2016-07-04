@@ -5,6 +5,7 @@ Given an array of integers, find if the array contains any duplicates. Your func
 
 //法一：排序 然后前后对比
 //法二：使用hash set: unordered_set
+
 /*
 哈希表，遍历整个数组，如果哈希表里存在，返回false，如果不存在，则将其放入哈希表中，代码如下： 
 */

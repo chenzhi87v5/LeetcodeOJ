@@ -1,3 +1,4 @@
+//Intersection of Two Arrays 两个数组相交
 /*
 Given two arrays, write a function to compute their intersection.
 
@@ -12,7 +13,6 @@ The result can be in any order.
 /*
 这道题让我们找两个数组相同的部分，难度不算大，我们可以用个set把nums1都放进去，然后遍历nums2的元素，如果在set中存在，说明是公共部分，加入结果的set中，最后再把结果转为vector的形式即可： 
 */
-
 class Solution {
 public:
 	vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {

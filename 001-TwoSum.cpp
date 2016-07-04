@@ -17,8 +17,6 @@ return [0, 1].
 #include<unordered_map>
 using namespace std;
 
-/*1-暴力解法:时间复杂度n^2，超时*/
-
 /*2-hash 哈希表存储每个数对应的下标，时间复杂度n 空间复杂度n*/
 //unordered_map 使用
 

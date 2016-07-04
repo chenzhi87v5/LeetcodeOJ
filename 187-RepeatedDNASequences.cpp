@@ -1,18 +1,16 @@
+//Repeated DNA Sequences 求重复的DNA序列
 /*
 All DNA is composed of a series of nucleotides abbreviated as A, C, G, and T, for example: "ACGAATTCCG". When studying DNA, it is sometimes useful to identify repeated sequences within the DNA.
-
 Write a function to find all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule.
 
 For example,
-
 Given s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT",
 
 Return:
 ["AAAAACCCCC", "CCCCCAAAAA"].
 */
 
-//使用hash unordered_set实现
-
+//使用hash unordered_set实现  将子字符串编码成int数字，每个字符串的值是唯一确定的
 class Solution {
 public:
 	//将字符串编码成int数字，每个字符串的值是唯一确定的
@@ -54,7 +52,6 @@ public:
 		for (auto str : tmp_res) {
 			result.push_back(str);
 		}
-
 		return result;
 	}
 };

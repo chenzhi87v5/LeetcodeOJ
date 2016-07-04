@@ -1,3 +1,4 @@
+//Intersection of Two Arrays II 两个数组相交之二
 /*
 Given two arrays, write a function to compute their intersection.
 
@@ -7,7 +8,6 @@ Given nums1 = [1, 2, 2, 1], nums2 = [2, 2], return [2, 2].
 Note:
 	Each element in the result should appear as many times as it shows in both arrays.
 	The result can be in any order.
-
 Follow up:
 	What if the given array is already sorted? How would you optimize your algorithm?
 	What if nums1's size is small compared to nums2's size? Which algorithm is better?
@@ -29,7 +29,6 @@ public:
 			if (m[a]-- > 0)
 				res.push_back(a);
 		}
-
 		return res;
 	}
 };

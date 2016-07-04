@@ -1,6 +1,6 @@
+//Top K Frequent Elements 前K个高频元素
 /*
 Given a non-empty array of integers, return the k most frequent elements.
-
 For example,
 Given [1,1,1,2,2,3] and k = 2, return [1,2].
 */
@@ -13,13 +13,13 @@ class Solution {
 public:
 	vector<int> topKFrequent(vector<int>& nums, int k) {
 		unordered_map<int, int> m;              //哈希表 建立数字和其出现次数的映射 unordered_map 
-		priority_queue<pair<int, int>> q;      //最大堆来按照映射次数从大到小排列 priority_queue  
-		vector<int> res;                       //结果集 
+		priority_queue<pair<int, int>> q;       //最大堆来按照映射次数从大到小排列 priority_queue  
+		vector<int> res;                        //结果集 
 
 		for (auto a : nums)
 			m[a]++;
 		for (auto it : m)
-			q.push({it.second, it.first});  //pair的使用
+			q.push({it.second, it.first});  //pair的使用 {a,b} or make_pair(a,b)
 		for (int i = 0; i < k; i++) {
 			res.push_back(q.top().second);
 			q.pop();
