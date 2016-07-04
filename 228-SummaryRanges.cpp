@@ -1,18 +1,17 @@
+//Summary Ranges 总结区间
 /*
 Given a sorted integer array without duplicates, return the summary of its ranges.
-
 For example, given [0,1,2,4,5,7], return ["0->2","4->5","7"].
 */
 
-//按照题意解
 /*
-C++ int与string的转化
-
-int转化为string
-~~~~
-使用itoa   char *itoa( int value, char *string,int radix)
-使用sprintf  int sprintf( char *buffer, const char *format, [ argument] … );
-使用stringstream 
+C++ int与string的转化:
+~~~~~~~~~~~~~~~
+int转化为string:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1.使用itoa   char *itoa( int value, char *string,int radix)
+2.使用sprintf
+3.使用stringstream 
   int aa = 30;
   stringstream ss;
   ss<<aa; 
@@ -22,12 +21,11 @@ int转化为string
   string s2;
   ss>>s2;
   cout<<s2<<endl; // 30
-
-string转化为int
-~~~~
-使用strtol（string to long）  
-使用sscanf
-使用stringstream
+~~~~~~~~~~~~~~~
+string转化为int:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1.使用strtol（string to long）  
+2.使用stringstream
 string s = "17";
 
 stringstream ss;
@@ -37,45 +35,23 @@ ss<<s;
  ss>>i;
  cout<<i<<endl; // 17
 */
+
+/*
+这道题给定我们一个有序数组，让我们总结区间，具体来说就是让我们找出连续的序列，然后首尾两个数字之间用个“->"来连接，那么我只需遍历一遍数组即可，每次检查下一个数是不是递增的，如果是，则继续往下遍历，如果不是了，我们还要判断此时是一个数还是一个序列，一个数直接存入结果，序列的话要存入首尾数字和箭头“->"。我们需要两个变量i和j，其中i是连续序列起始数字的位置，j是连续数列的长度，当j为1时，说明只有一个数字，若大于1，则是一个连续序列，代码如下： 
+*/
+//to_string()函数
 class Solution {
 public:
 	vector<string> summaryRanges(vector<int>& nums) {
 		vector<string> res;
-		if (nums.size() == 0)
-			return res;
-		if (nums.size() == 1) {
-			stringstream ss;
-			string s;
-			ss << nums[0];
-			ss >> s;
-			res.push_back(s);
-			return res;
+		int i = 0, n = nums.size();
+		while (i < n) {
+			int j = 1;
+			while (i + j < n && nums[i + j] - nums[i] == j) ++j;
+			res.push_back(j <= 1 ? to_string(nums[i]) : to_string(nums[i]) + "->" + to_string(nums[i + j - 1]));
+			i += j;
 		}
-
-		int begin = nums[0], end = nums[0];
-		
-		for (int i = 1; i < nums.size(); i++) {
-			if (nums[i] == end || nums[i] == end + 1) {
-				end = nums[i];
-			} else {
-				res.push_back(format(begin, end));
-				begin = end = nums[i];
-			}
-		}
-		res.push_back(format(begin, end));
-		
 		return res;
 	}
-private:
-	//格式化函数
-	string format(int begin, int end) {
-		char buffer[32];
-		if (begin == end) {
-			sprintf(buffer, "%d", begin);
-		} else {
-			sprintf(buffer, "%d->%d", begin, end);
-		}
+}
 
-		return string(buffer);
-	}
-};

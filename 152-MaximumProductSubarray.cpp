@@ -6,25 +6,37 @@ For example, given the array [2,3,-2,4],
 the contiguous subarray [2,3] has the largest product = 6.
 */
 
-//1-: 考虑特殊情况有多个负值时候
-//双vector 解决时间复杂度 n 空间复杂度 n  (精辟)
+/*
+动态规划 一个记录max  一个记录min
+以下摘自OJ官方解答，大体思路相同，写法更加简洁：
+
+Besides keeping track of the largest product, we also need to keep track of the smallest product. Why? The smallest product, which is the largest in the negative sense could become the maximum when being multiplied by a negative number.
+
+Let us denote that:
+f(k) = Largest product subarray, from index 0 up to k.
+ 
+Similarly,
+g(k) = Smallest product subarray, from index 0 up to k.
+ 
+Then,
+f(k) = max( f(k-1) * A[k], A[k], g(k-1) * A[k] )
+g(k) = min( g(k-1) * A[k], A[k], f(k-1) * A[k] )
+ 
+There we have a dynamic programming formula. Using two arrays of size n, we could deduce the final answer as f(n-1). Since we only need to access its previous elements at each step, two variables are sufficient.
+*/
 class Solution {
 public:
 	int maxProduct(vector<int>& nums) {
-		//两个vector 记录当前最大 与 最小
-		vector<int> f, g;
-		f.push_back(nums[0]);
-		g.push_back(nums[0]);
-
+		if (nums.empty())
+			return 0;
+		int res = nums[0], mn = nums[0], mx = nums[0];
 		for (int i = 1; i < nums.size(); i++) {
-			f.push_back(max(max(f[i - 1] * nums[i], g[i - 1] * nums[i]), nums[i]));
-			g.push_back(min(min(f[i - 1] * nums[i], g[i - 1] * nums[i]), nums[i]));
+			int tmax = mx, tmin = mn;
+			mx = max(max(nums[i], tmax * nums[i]), tmin * nums[i]);
+			mn = min(min(nums[i], tmax * nums[i]), tmin * nums[i]);
+			res = max (res, mx);
 		}
 
-		int m = f[0];
-		for (int i = 1; i < f.size(); i++)
-			m = max(m, f[i]);
-	
-		return m;
+		return res;
 	}
-};
+}
