@@ -1,57 +1,19 @@
+//String to Integer (atoi) 字符串转为整数
 /*
 Implement atoi to convert a string to an integer.
-
 Hint: Carefully consider all possible input cases. If you want a challenge, please do not see below and ask yourself what are the possible input cases.
 
 Notes: It is intended for this problem to be specified vaguely (ie, no given input specs). You are responsible to gather all the input requirements up front.
 */
 
-#include<iostream>
-
-using namespace std;
-
-#define INT_MAX 2147483647
-#define INT_MIN -2147483648
-
-/*1 - mySolution: */
+/*各种特殊情况考虑及溢出*/
 /*
-class Solution {
-public:
-	int myAtoi(string str) {
-		long long int r = 0;
-		int i = 0, key = 1;
-		
-		if (str.size() <= 0)
-			return r;
-
-		while (str[i] == ' ' && i < str.size())
-			i++;
-		if (i == str.size()) {
-			return r;
-		}else if (str[i] == '+') {
-			i++;
-		}else if (str[i] == '-') {
-			i++;
-			key = -1;
-		}
-
-		for (; i < str.size(); i++) {
-			if(str[i] < '0' || str[i] > '9')
-				break;
-			r = r*10 + (int)(str[i] - '0');
-			if (r > (long long int)INT_MAX + 1)
-				break;
-		}
-		r *= key;
-		if (r < INT_MIN || r > INT_MAX)
-			r = 0;
-		
-		return r;
-	}
-};
+1. 若字符串开头是空格，则跳过所有空格，到第一个非空格字符，如果没有，则返回0.
+2. 若第一个非空格字符是符号+/-，则标记isPositive的真假，这道题还有个局限性，那就是在c++里面，+-1和-+1都是认可的，都是-1，而在此题里，则会返回0.
+3. 若下一个字符不是数字，则返回0. 完全不考虑小数点和自然数的情况，不过这样也好，起码省事了不少。
+4. 如果下一个字符是数字，则转为整形存下来，若接下来再有非数字出现，则返回目前的结果。
+5. 还需要考虑边界问题，如果超过了整形数的范围，则用边界值替代当前值。
 */
-
-/*2-Answers:*/
 class Solution {
 public:
 	int myAtoi(string str) {
@@ -78,13 +40,3 @@ public:
 		return num * sign;
 	}
 };
-
-
-
-int main() 
-{
-	string str = "  -0012a42";
-	Solution ati;
-	cout<<ati.myAtoi(str)<<endl;
-	return 0;
-}

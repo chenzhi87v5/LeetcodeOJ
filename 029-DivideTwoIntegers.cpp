@@ -1,18 +1,9 @@
+//Divide Two Integers 两数相除
 /*
 Divide two integers without using multiplication, division and mod operator.
-
 If it is overflow, return MAX_INT.
 */
-
-#include<iostream>
-
-using namespace std;
-
-/*1-mySolution:考虑超时，溢出情况*/
 // int取值范围： -2147483648～2147483647
-
-
-/*2-Answers:*/
 //加 减 位运算
 class Solution {
 public:

@@ -1,15 +1,8 @@
+//Roman to Integer 罗马数字转化成整数
 /*
 Given a roman numeral, convert it to an integer.
-
 Input is guaranteed to be within the range from 1 to 3999.
 */
-
-#include<iostream>
-
-using namespace std;
-
-/*1-mySolution:*/
-//不能受int to roman 思想的影响
 
 /*2-Answers:*/
 class Solution {
@@ -47,8 +40,3 @@ public:
 		return result;
 	}
 };
-
-int main()
-{
-	return 0;
-}
