@@ -1,7 +1,7 @@
+//Merge Two Sorted Lists 混合插入有序链表
 /*
 Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists. 
 */
-
 /**
   * Definition for singly-linked list.
   * struct ListNode {
@@ -9,39 +9,10 @@ Merge two sorted linked lists and return it as a new list. The new list should b
   *     ListNode *next;
   *     ListNode(int x) : val(x), next(NULL) {}
   * };
-  */
-
-/*1-mySolution:*/
-/*
-class Solution {
-public:
-	ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
-		ListNode dummy(-1);
-		ListNode *p = &dummy, *p1 = l1, *p2 = l2;
-		while (p1 != NULL || p2 != NULL) {
-			if (p1 == NULL && p2 != NULL) {
-				p->next = p2;
-				break;
-			} else if (p2 == NULL && p1 != NULL) {
-				p->next = p1;
-				break;
-			} else if (p1->val < p2->val) {
-				p->next = p1;
-				p = p->next;
-				p1 = p1->next;
-			} else {
-				p->next = p2;
-				p = p->next;
-				p2 = p2->next;
-			}
-		}
-
-		return dummy.next;
-	}
-};
 */
-/*2-Answers:*/
-
+/*
+这道混合插入有序链表和我之前那篇混合插入有序数组非常的相似，仅仅是数据结构由数组换成了链表而已，代码写起来反而更简洁。具体思想就是新建一个链表，然后比较两个链表中的元素值，把较小的那个链到新链表中，由于两个输入链表的长度可能不同，所以最终会有一个链表先完成插入所有元素，则直接另一个未完成的链表直接链入新链表的末尾。代码如下： 
+*/
 class Solution {
 public:
 	ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
@@ -51,6 +22,7 @@ public:
 			return l1;
 		ListNode dummy(-1);
 		ListNode *p = &dummy;
+		
 		for (;l1 != NULL && l2 != NULL; p = p->next) {  // &&号
 			if (l1->val > l2->val) {
 				p->next = l2;
@@ -65,4 +37,3 @@ public:
 		return dummy.next;
 	}
 };
-

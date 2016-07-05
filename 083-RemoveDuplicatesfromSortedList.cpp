@@ -1,11 +1,10 @@
+//Remove Duplicates from Sorted List 移除有序链表中的重复项
 /*
 Given a sorted linked list, delete all duplicates such that each element appear only once.
-
 For example,
 Given 1->1->2, return 1->2.
 Given 1->1->2->3->3, return 1->2->3.
 */
-
 /**
   * Definition for singly-linked list.
   * struct ListNode {
@@ -13,33 +12,25 @@ Given 1->1->2->3->3, return 1->2->3.
   *     ListNode *next;
   *     ListNode(int x) : val(x), next(NULL) {}
   * };
-  */
+*/
 
-//1-:时间复杂度n ,使用双指针 删除重复的元素
-
+/*
+移除有序链表中的重复项需要定义个指针指向该链表的第一个元素，然后第一个元素和第二个元素比较，如果重复了，则删掉第二个元素，如果不重复，指针指向第二个元素。这样遍历完整个链表，则剩下的元素没有重复项。代码如下： 
+*/
 class Solution {
 public:
 	ListNode* deleteDuplicates(ListNode* head) {
-		ListNode dummy(-1);
-		dummy.next = head;
-		if (head == NULL || head->next == NULL) //如果为空或者一个节点直接返回
-			return dummy.next;
-
-		ListNode *p = head, *q = head->next;   
-		while (q != NULL) {
-			if (q->val == p->val) {       //重复节点忽略，并且删除防止内存泄露
-				ListNode *t = q;
-				q = q->next;
-				delete t;
-
-			} else {                       //非重复节点q 直接添加到p节点后
-				p->next = q;
-				p = q;
-				q = q->next;
-			} 
+		if (!head || !head->next) return head;
+		ListNode *start = head;
+		while (start && start->next) {
+			if (start->val == start->next->val) {
+				ListNode *tmp = start->next;
+				start->next = start->next->next;
+				delete tmp;
+			} else {
+				start = start->next;
+			}
 		}
-		p ->next = NULL;
-
-		return dummy.next;
+		return head;
 	}
 };

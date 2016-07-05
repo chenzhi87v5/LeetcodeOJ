@@ -1,13 +1,12 @@
+//Reorder List 链表重排序
 /*
 Given a singly linked list L: L0→L1→…→Ln-1→Ln,
 reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…
 
 You must do this in-place without altering the nodes' values.
-
 For example,
 Given {1,2,3,4}, reorder it to {1,4,2,3}.
 */
-
 /**
   * Definition for singly-linked list.
   * struct ListNode {
@@ -17,8 +16,7 @@ Given {1,2,3,4}, reorder it to {1,4,2,3}.
   * };
   */
 
-//1-:看懂题意
-//题目规定要in-place，也就是说只能使用O(1)的空间
+//看懂题意 题目规定要in-place，也就是说只能使用O(1)的空间
 //可以找到中间节点，断开，把后半截单链表reverse一下，再合并两个单链表
 //时间复杂度n 空间复杂度1
 class Solution {
@@ -35,9 +33,9 @@ public:
 			fast = fast->next->next;
 		}
 		
-		prev->next = NULL;  //中间节点减掉
+		prev->next = NULL;  	//中间节点减掉
 
-		slow = reverse(slow);  //头插法翻转链表 （精辟）
+		slow = reverse(slow);  	//头插法翻转链表 （精辟）
 
 		//合并两个链表
 		ListNode *curr = head;
@@ -48,7 +46,6 @@ public:
 			curr->next->next = tmp;
 			curr = tmp;
 		}
-
 		curr->next = slow;
 	}
 
@@ -58,18 +55,13 @@ public:
 			return head;
 
 		ListNode *prev = head;
-		for (ListNode *curr = head->next, *next = curr->next; curr;) {
-			
+		for (ListNode *curr = head->next, *next = curr->next; curr;) {		
 			curr->next = prev;
-
 			prev = curr;
 			curr = next;
 			next = next ? next->next : NULL;
 		}
-
 		head->next = NULL;
-		
 		return prev;
 	}
-
 };

@@ -1,6 +1,6 @@
+//Linked List Cycle 单链表中的环
 /*
 Given a linked list, determine if it has a cycle in it.
-
 Follow up:
 Can you solve it without using extra space?
 */
@@ -21,7 +21,6 @@ Can you solve it without using extra space?
 2.最好的方法是时间复杂度O(n)，空间复杂度O(1) 的。设置两个指针，一个快一个慢，快
   的指针每次走两步， 慢的指针每次走一步， 如果快指针和慢指针相遇， 则说明有环。
 */
-
 class Solution {
 public:
 	bool hasCycle(ListNode *head) {
@@ -34,7 +33,6 @@ public:
 			if (slow == fast)
 				return true;
 		}
-
 		return false;
 	}
 };
