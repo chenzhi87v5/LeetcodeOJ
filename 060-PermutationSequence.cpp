@@ -1,9 +1,8 @@
+//Permutation Sequence 序列排序
 /*
 The set [1,2,3,…,n] contains a total of n! unique permutations.
-
 By listing and labeling all of the permutations in order,
 We get the following sequence (ie, for n = 3):
-
 "123"
 "132"
 "213"
@@ -11,13 +10,10 @@ We get the following sequence (ie, for n = 3):
 "312"
 "321"
 Given n and k, return the kth permutation sequence.
-
 Note: Given n will be between 1 and 9 inclusive.
 */
-
 //1-:暴力法算出所有排列，然后对排列排序sort 计算第k个排列 ;或者用之前的NextPermutation
 //2-:康托编码思想：数学法解决 思路有点难理解
-
 class Solution {
 public:
 	string getPermutation(int n, int k) {
@@ -28,7 +24,6 @@ public:
 
 		return kth_permutation(s, k);
 	}
-
 private:
 	//求n！的值
 	int factorial (int n) {
@@ -38,7 +33,6 @@ private:
 		
 		return result;
 	}
-
 	//seq已经排好序,是第一个排列
 	template<typename Sequence>
 	Sequence kth_permutation(const Sequence &seq, int k) {
@@ -59,3 +53,6 @@ private:
 		return result;
 	}
 };
+/*
+
+*/

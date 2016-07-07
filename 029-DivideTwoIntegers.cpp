@@ -4,7 +4,7 @@ Divide two integers without using multiplication, division and mod operator.
 If it is overflow, return MAX_INT.
 */
 // int取值范围： -2147483648～2147483647
-//加 减 位运算
+//我们不能用乘法，除法和取余操作！所以只有加，减，位运算
 class Solution {
 public:
 	int divide(int dividend, int divisor) {
@@ -28,10 +28,3 @@ public:
 		return result;
 	}		        
 };
-
-int main()
-{
-	Solution A;
-	cout<< A.divide(-2147483648, -1)<<endl;
-	return 0;
-}

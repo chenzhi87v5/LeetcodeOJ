@@ -4,7 +4,7 @@ Given an integer, convert it to a roman numeral.
 Input is guaranteed to be within the range from 1 to 3999.
 */
 
-/*简洁代码*/
+/*简洁代码 参考罗马数字转化整数*/
 class Solution {
 public:
 	string intToRoman(int num) {
