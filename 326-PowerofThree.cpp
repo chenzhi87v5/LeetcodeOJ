@@ -1,6 +1,6 @@
+//Power of Three 判断3的次方数
 /*
 Given an integer, write a function to determine if it is a power of three.
-
 Follow up:
 Could you do it without using any loop / recursion?
 */
@@ -8,7 +8,6 @@ Could you do it without using any loop / recursion?
 /*
 这道题让我们判断一个数是不是3的次方数，在LeetCode中，有一道类似的题目Power of Two，那道题有个非常简单的方法，由于2的次方数实在太有特点，最高位为1，其他位均为0，所以特别容易，而3的次方数没有显著的特点，最直接的方法就是不停地除以3，看最后的余数是否为1，要注意考虑输入是负数和0的情况，参见代码如下：
 */
-
 //解法一：
 class Solution {
 public:
@@ -16,7 +15,6 @@ public:
 		while (n && n % 3 == 0) {
 			n /= 3;
 		}
-
 		return n == 1;
 	}
 };

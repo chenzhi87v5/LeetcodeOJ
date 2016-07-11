@@ -1,3 +1,4 @@
+//Add Binary 二进制数相加
 /*
 Given two binary strings, return their sum (also a binary string).
 
@@ -7,8 +8,7 @@ b = "1"
 Return "100".
 */
 
-//1-:
-
+//模拟十进制相加，使用一个变量记录进位
 class Solution {
 public:
 	string addBinary(string a, string b) {

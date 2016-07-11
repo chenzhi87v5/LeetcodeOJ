@@ -1,12 +1,10 @@
+//Sqrt(x) 求平方根
 /*
 Implement int sqrt(int x).
-
 Compute and return the square root of x.
 */
 
-//1-:传统加倍法 超时
-//2-: 二分法 类似pow 
-
+//这道题要求我们求平方根，我们能想到的方法就是算一个候选值的平方，然后和x比较大小，为了缩短查找时间，我们采用二分搜索法来找平方根
 class Solution {
 public:
 	int mySqrt(int x) {
@@ -18,7 +16,7 @@ public:
 
 		while(left <= right) {
 			const int mid = left + (right - left) / 2;
-			if (x / mid > mid) {   //注意不要用x > mid * mid 会溢出
+			if (x / mid > mid) {                       //精辟：注意不要用x > mid * mid 会溢出
 				left = mid + 1;
 				last_mid = mid;
 			} else if (x / mid < mid) {

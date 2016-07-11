@@ -1,3 +1,4 @@
+//Excel Sheet Column Number 求Excel表列序号
 /*
 Related to question Excel Sheet Column Title
 
@@ -14,8 +15,7 @@ For example:
     AB -> 28 
 */
 
-//题意解
-
+//这题实际上相当于一种二十六进制转十进制的问题，并不难，只要一位一位的转换即可。代码如下：
 class Solution {
 public:
 	int titleToNumber(string s) {
@@ -28,7 +28,6 @@ public:
 		for (int i = 0; i < len; i++) {
 			res = res * 26 + (s[i] - 'A' + 1);
 		}
-
 		return res;
 	}
 };
