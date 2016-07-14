@@ -1,16 +1,13 @@
+//Largest Number 最大组合数
 /*
 Given a list of non negative integers, arrange them such that they form the largest number.
-
 For example, given [3, 30, 34, 5, 9], the largest formed number is 9534330.
-
 Note: The result may be very large, so you need to return a string instead of an integer.
 */
 
 //理解题意，注意考虑边界特殊情况比如数字最前面的0
 //转换成数字转换为string比大小（自定义比较函数，排序排序），注意特殊情况
-
 #include<sstream>   //stream
-
 //自定义比较函数
 bool cmp(const string s1, const string s2) {
 	return (s1 + s2) > (s2 + s1);
