@@ -1,8 +1,7 @@
+//Basic Calculator II 基本计算器之二
 /*
 Implement a basic calculator to evaluate a simple expression string.
-
 The expression string contains only non-negative integers, +, -, *, / operators and empty spaces . The integer division should truncate toward zero.
-
 You may assume that the given expression is always valid.
 
 Some examples:
@@ -26,9 +25,9 @@ public:
 
 		for (int i = 0; i < s.size(); i++) {
 			if (isdigit(s[i])) {
-				num = num * 10 + s[i] - '0';   //记录每个连续的数字
+				num = num * 10 + s[i] - '0';   			  //记录每个连续的数字
 			}
-			if (!isdigit(s[i]) && ' ' != s[i] || i == s.size() - 1) { //当不为数字，不为空格，或者只有一个数字时情况 妙！
+			if (!isdigit(s[i]) && ' ' != s[i] || i == s.size() - 1) { //当不为数字，不为空格，或者只有一个数字时情况
 				if (sign == '-') {
 					stk.push(-num);
 				}

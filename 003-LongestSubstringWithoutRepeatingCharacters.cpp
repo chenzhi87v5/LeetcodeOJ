@@ -19,7 +19,7 @@ public:
 		int last[ASCII_MAX]; 		//记录字符上次出现的位置
 		int start = 0; 			//记录当前子串的起始位置
 
-		fill(last, last + ASCII_MAX, -1); //所有字符位置初始化为-1
+		fill(last, last + ASCII_MAX, -1); //所有字符位置初始化为-1  fill STL
 		int max_len = 0;
 		for (int i = 0; i < s.size(); i++) {
 			if (last[s[i]] >= start) {

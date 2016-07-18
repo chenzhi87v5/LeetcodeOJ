@@ -1,3 +1,4 @@
+//Reverse Words in a String 翻转字符串中的单词
 /*
 Given an input string, reverse the string word by word.
 
@@ -8,8 +9,6 @@ return "blue is sky the".
 Update (2015-02-12):
 For C programmers: Try to solve it in-place in O(1) space.
 
-click to show clarification.
-
 Clarification:
 	1.What constitutes a word?
 	  A sequence of non-space characters constitutes a word.
@@ -19,8 +18,7 @@ Clarification:
 	  Reduce them to a single space in the reversed string.
 */
 
-//1-:从后往前遍历
-
+//从后往前遍历
 class Solution {
 public:
 	void reverseWords(string &s) {
@@ -48,3 +46,4 @@ public:
 		return;
 	}
 };
+

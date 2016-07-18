@@ -1,3 +1,4 @@
+//Count and Say 计数和读法
 /*
 The count-and-say sequence is the sequence of integers beginning as follows:
 1, 11, 21, 1211, 111221, ...
@@ -9,10 +10,7 @@ Given an integer n, generate the nth sequence.
 
 Note: The sequence of integers will be represented as a string.
 */
-
-/*1-mySolution:*/
-//理解题意 
-
+//按照题意写出getNext函数求解下一个数
 class Solution {
 public:
 	string countAndSay(int n) {

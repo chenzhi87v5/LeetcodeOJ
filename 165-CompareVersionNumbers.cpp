@@ -1,3 +1,4 @@
+//Compare Version Numbers 版本比较
 /*
 Compare two version numbers version1 and version2.
 If version1 > version2 return 1, if version1 < version2 return -1, otherwise return 0.
@@ -11,7 +12,7 @@ Here is an example of version numbers ordering:
 	0.1 < 1.1 < 1.2 < 13.37
 */
 
-//1-:逐位比较就好了，把字符串转化成整型，这样就可以忽略前置0的影响
+//逐位比较就好了，把字符串转化成整型，这样就可以忽略前置0的影响
 //考虑类似 “1.2.3”版本号
 class Solution {
 public:
@@ -48,7 +49,6 @@ public:
 			if (val1 < val2)
 				return -1;
 		}
-
 		return 0;  //相等
 	}
 };
