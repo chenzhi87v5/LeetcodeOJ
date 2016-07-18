@@ -1,19 +1,15 @@
+//Kth Smallest Element in a BST 二叉搜索树中的第K小的元素
 /*
 Given a binary search tree, write a function kthSmallest to find the kth smallest element in it.
-
 Note: 
 	You may assume k is always valid, 1 ≤ k ≤ BST's total elements.
-
 Follow up:
 	What if the BST is modified (insert/delete operations) often and you need to find the kth smallest frequently? How would you optimize the kthSmallest routine?
-
 Hint:
-
 	Try to utilize the property of a BST.
 	What if you could modify the BST node's structure?
 	The optimal runtime complexity is O(height of BST).
 */
-
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -25,7 +21,6 @@ Hint:
  */
 
 //利用二叉树的特性进行求解
-
 /*
 在二叉搜索树种，找到第K个元素。
 算法如下：
@@ -34,7 +29,6 @@ Hint:
     left >=k, 则第K个元素在左子树中
     left +1 <k, 则转换为在右子树中，寻找第K-left-1元素
 */
-
 class Solution {
 public:
 	int calcTreeSize(TreeNode* root) {

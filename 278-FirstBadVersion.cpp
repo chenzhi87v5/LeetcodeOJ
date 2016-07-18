@@ -1,3 +1,4 @@
+//First Bad Version 第一个坏版本
 /*
 You are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.
 
@@ -7,7 +8,6 @@ You are given an API bool isBadVersion(version) which will return whether versio
 */
 
 //二分法 效率为 logn  题意为找出第一个为bad的点 使用二分查找法 效率最高
-
 // Forward declaration of isBadVersion API.
 bool isBadVersion(int version);
 
@@ -29,6 +29,7 @@ public:
 		if (isBadVersion(start)) {
 			return start;
 		}
+
 
 		return end;
 	}

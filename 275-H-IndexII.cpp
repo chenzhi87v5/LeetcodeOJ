@@ -1,3 +1,4 @@
+//H-Index II 求H指数之二
 /*
 Follow up for H-Index: What if the citations array is sorted in ascending order? Could you optimize your algorithm?
 
@@ -7,7 +8,6 @@ Expected runtime complexity is in O(log n) and the input is sorted.
 */
 
 //二分查找法 H-Index I 扩展
-
 class Solution {
 public:
 	int hIndex(vector<int>& citations) {
