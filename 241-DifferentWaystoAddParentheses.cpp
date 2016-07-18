@@ -1,3 +1,4 @@
+//Different Ways to Add Parentheses 添加括号的不同方式
 /*
 Given a string of numbers and operators, return all possible results from computing all the different possible ways to group numbers and operators. The valid operators are +, - and *.
 
@@ -22,11 +23,8 @@ Output: [-34, -14, -10, -10, 10]
 */
 
 /*
-与Unique Binary Search Trees II思路类似，可以对照看
-本题参考Gcdofree的做法
-左右子串分别计算所有可能，然后全排列
-*/
-//有点难度 理解 
+这道题让给我们一个可能含有加减乘的表达式，让我们在任意位置添加括号，求出所有可能表达式的不同值。这道题跟之前的那道Unique Binary Search Trees II 独一无二的二叉搜索树之二用的方法一样，用递归来解，划分左右子树，递归构造。
+*/ 
 class Solution {
 public:
 	vector<int> diffWaysToCompute(string input) {
