@@ -1,3 +1,4 @@
+//Reverse Bits 翻转位
 /*
 Reverse bits of a given 32 bits unsigned integer.
 
@@ -5,12 +6,10 @@ For example, given input 43261596 (represented in binary as 00000010100101000001
 
 Follow up:
 If this function is called many times, how would you optimize it?
-
 Related problem: Reverse Integer
 */
 
 //位运算,翻转所有位
-
 class Solution {
 public:
 	uint32_t reverseBits(uint32_t n) {
