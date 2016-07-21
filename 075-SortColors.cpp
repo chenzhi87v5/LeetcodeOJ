@@ -12,8 +12,6 @@ First, iterate the array counting number of 0's, 1's, and 2's, then overwrite ar
 
 Could you come up with an one-pass algorithm using only constant space?
 */
-
-
 /*
 这道题的本质还是一道排序的题，题目中给出提示说可以用计数排序，需要遍历数组两遍，那么先来看这种方法，因为数组中只有三个不同的元素，所以实现起来很容易。
 - 首先遍历一遍原数组，分别记录0,1,2的个数
@@ -22,7 +20,6 @@ Could you come up with an one-pass algorithm using only constant space?
 题目中还要让只遍历一次数组来求解，那么我需要用双指针来做，分别从原数组的首尾往中心移动。
 - 定义red指针指向开头位置，blue指针指向末尾位置
 - 从头开始遍历原数组，如果遇到0，则交换该值和red指针指向的值，并将red指针后移一位。若遇到2，则交换该值和blue指针指向的值，并将blue指针前移一位。若遇到1，则继续遍历。
-
 */
 //swap 常用STL函数
 class Solution {
