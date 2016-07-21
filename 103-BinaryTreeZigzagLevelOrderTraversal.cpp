@@ -1,14 +1,15 @@
+//Binary Tree Zigzag Level Order Traversal 二叉树的之字形层序遍历
 /*
 Given a binary tree, return the zigzag level order traversal of its nodes' values. (ie, from left to right, then right to left for the next level and alternate between).
-
 For example:
+
 Given binary tree {3,9,20,#,#,15,7},
     3
    / \
   9  20
     /  \
    15   7
-   
+
 return its zigzag level order traversal as:
 [
   [3],
@@ -16,7 +17,6 @@ return its zigzag level order traversal as:
   [15,7]
 ]
 */
-
 /**
   * Definition for a binary tree node.
   * struct TreeNode {
@@ -25,9 +25,7 @@ return its zigzag level order traversal as:
   *     TreeNode *right;
   *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
   * };
-  */
-
-//1-:递归 和 迭代
+*/
 //递归法 bool值 判定翻转条件
 class Solution {
 public:
@@ -76,20 +74,17 @@ public:
 					next.push(node->left);
 				if (node->right != NULL)
 					next.push(node->right);
-			}
-			
+			}	
 			if (left_to_right) {
 				result.push_back(level);
 			} else {
-				reverse(level.begin(), level.end());
+				reverse(level.begin(), level.end());   //STL reverse
 				result.push_back(level);
 			}
-			
 			level.clear();
 			left_to_right = !left_to_right;
-			swap(next, current);
+			swap(next, current);                           //STL swap
 		}
-
 		return result;
 	}
 };

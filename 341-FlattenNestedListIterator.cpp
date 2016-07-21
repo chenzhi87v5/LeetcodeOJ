@@ -1,6 +1,6 @@
+//Flatten Nested List Iterator 压平嵌套链表迭代器
 /*
 Given a nested list of integers, implement an iterator to flatten it.
-
 Each element is either an integer, or a list -- whose elements may also be integers or other lists.
 
 Example 1:
@@ -13,7 +13,6 @@ Given the list [1,[4,[6]]],
 
 By calling next repeatedly until hasNext returns false, the order of elements returned by next should be: [1,4,6].
 */
-
 /**
  * // This is the interface that allows for creating nested lists.
  * // You should not implement it, or speculate about its implementation
@@ -32,7 +31,6 @@ By calling next repeatedly until hasNext returns false, the order of elements re
  * };
  */
 //压平嵌套链表迭代器
-//
 class NestedIterator {
 private:
 	stack<NestedInteger> s;
@@ -64,9 +62,8 @@ public:
 		return false;
 	}
 };
-
 /**
   * Your NestedIterator object will be instantiated and called as such:
   * NestedIterator i(nestedList);
   * while (i.hasNext()) cout << i.next();
-  */
+*/
