@@ -1,3 +1,4 @@
+//Maximal Square 最大正方形
 /*
 Given a 2D binary matrix filled with 0's and 1's, find the largest square containing all 1's and return its area.
 
@@ -10,10 +11,7 @@ For example, given the following matrix:
 
 Return 4.
 */
-
-//最大的正方形
-//新建一个矩阵 记录正方形边大小
-//动态规划问题
+//最大的正方形  新建一个矩阵 记录正方形边大小 动态规划问题
 class Solution {
 public:
 	int maximalSquare(vector<vector<char>>& matrix) {

@@ -1,3 +1,4 @@
+//Range Sum Query - Immutable 区域和检索 - 不可变
 /*
 Given an integer array nums, find the sum of the elements between indices i and j (i ≤ j), inclusive.
 
@@ -11,8 +12,6 @@ Note:
 You may assume that the array does not change.
 There are many calls to sumRange function.
 */
-
-//按照题意解
 
 class NumArray {
 private:
