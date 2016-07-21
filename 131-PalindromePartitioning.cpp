@@ -1,22 +1,21 @@
+//Palindrome Partitioning 拆分回文串
 /*
 Given a string s, partition s such that every substring of the partition is a palindrome.
-
 Return all possible palindrome partitioning of s.
-
 For example, given s = "aab",
 Return
-
   [
    ["aa","b"],
    ["a","a","b"]
   ]
 */
 
-//1-:深度优先搜索
-//在每一步都可以判断中间结果是否为合法结果，用回溯法
-//一个长度为n 的字符串，有n-1个地方可以砍断，每个地方可断可不断，因此复杂度为 2^(n-1)
-//时间复杂度2^n 空间复杂度n
-//STL substr()主要功能是复制子字符串，要求从指定位置开始，并具有指定的长度
+/*
+在每一步都可以判断中间结果是否为合法结果，用回溯法
+一个长度为n 的字符串，有n-1个地方可以砍断，每个地方可断可不断，因此复杂度为 2^(n-1)
+时间复杂度2^n 空间复杂度n
+STL substr()主要功能是复制子字符串，要求从指定位置开始，并具有指定的长度
+*/
 class Solution {
 public:
 	vector<vector<string>> partition(string s) {
