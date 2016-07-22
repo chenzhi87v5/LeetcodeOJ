@@ -1,3 +1,4 @@
+//Range Sum Query - Mutable 区域和检索 - 可变  树状数组Binary Indexed Tree
 /*
 Given an integer array nums, find the sum of the elements between indices i and j (i ≤ j), inclusive.
 
@@ -15,11 +16,9 @@ Note:
 */
 
 //Range Sum Query - Immutable 区域和检索 - 不可变的延伸
-
 /*
 原码，补码和反码。计算机中，数值都是以补码的形式保存
 补码：正数的补码和原码一样;负数的补码，就是在原来的原码基础上，保持符号位不变，其他位取反，然后再加1
-
 最低位的计算方法有两种，一种是x&(x^(x–1))，另一种是利用补码特性x&-x 
 */
 
@@ -28,7 +27,6 @@ Note:
 */
 
 //详细参考 http://www.cnblogs.com/grandyang/p/4985506.html
-
 class NumArray {
 private:
 	vector<int> num;  //存储 原数组
@@ -66,8 +64,6 @@ public:
 		return res;
 	}
 };
-
-
 // Your NumArray object will be instantiated and called as such:
 // NumArray numArray(nums);
 // numArray.sumRange(0, 1);
