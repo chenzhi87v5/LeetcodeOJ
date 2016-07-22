@@ -1,12 +1,11 @@
+//Implement Trie (Prefix Tree) 实现字典树(前缀树)
 /*  
 Implement a trie with insert, search, and startsWith methods. 
-
 Note:
 You may assume that all inputs are consist of lowercase letters a-z.
 */
 
 //实现前缀树
-
 class TrieNode {   //节点类
 public:
 	// Initialize your data structure here.
@@ -28,7 +27,7 @@ public:
 	Trie() {
 		root = new TrieNode();
 	}
-
+	
 	// Inserts a word into the trie.
 	void insert(string word) {
 		TrieNode *p = root;
@@ -51,7 +50,6 @@ public:
 		}
 		if (p == NULL || p->isString == false)
 			return false;
-
 		return true;
 	}
 
@@ -64,10 +62,8 @@ public:
 			if(p == NULL)
 				return false;
 		}
-
 		return true;
 	}
-
 private:
 	TrieNode* root;
 };

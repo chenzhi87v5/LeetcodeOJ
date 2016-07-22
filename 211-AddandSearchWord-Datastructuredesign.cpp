@@ -20,7 +20,6 @@ click to show hint.
 You should be familiar with how a Trie works. If not, please work on this problem: Implement Trie (Prefix Tree) first.
 */
 //Trie 单词查找树 Prefix Tree 前缀树  先构造单词查找树 
-
 class TrieNode {      				//TrieNode类设计
 public:
 	bool isEnd;
