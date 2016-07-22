@@ -1,25 +1,21 @@
+//Surrounded Regions 包围区域
 /*
 Given a 2D board containing 'X' and 'O', capture all regions surrounded by 'X'.
-
 A region is captured by flipping all 'O's into 'X's in that surrounded region.
 
 For example,
-
 X X X X
 X O O X
 X X O X
 X O X X
 
 After running your function, the board should be:
-
 X X X X
 X X X X
 X X X X
 X O X X
 
 */
-
-//1-:广度搜索 BFS  有难度
 //从上下左右四个边界往里走，凡是能碰到的'O'，都是跟边界接壤的，应该保留设置为 'E'
 class Solution {
 public:
@@ -66,7 +62,7 @@ private:
 		int m = board.size();
 		int n = board[0].size();
 
-		typedef pair<int, int> point;   //使用pair 以及typedef
+		typedef pair<int, int> point;    //使用pair 以及typedef
 		queue<point> Q;                  //队列
 		Q.push(point(i, j));
 		board[i][j] = 'E';
