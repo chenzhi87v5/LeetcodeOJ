@@ -1,10 +1,8 @@
+//Course Schedule II 课程清单之二
 /*  
 There are a total of n courses you have to take, labeled from 0 to n - 1.
-
 Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expressed as a pair: [0,1]
-
 Given the total number of courses and a list of prerequisite pairs, return the ordering of courses you should take to finish all courses.
-
 There may be multiple correct orders, you just need to return one of them. If it is impossible to finish all courses, return an empty array.
 
 For example:
@@ -18,8 +16,6 @@ There are a total of 4 courses to take. To take course 3 you should have finishe
 Note:
 The input prerequisites is a graph represented by a list of edges, not adjacency matrices. Read more about how a graph is represented.
 
-click to show more hints.
-
 Hints:
 This problem is equivalent to finding the topological order in a directed graph. If a cycle exists, no topological ordering exists and therefore it will be impossible to take all courses.
 Topological Sort via DFS - A great video tutorial (21 minutes) on Coursera explaining the basic concepts of Topological Sort.
@@ -27,7 +23,6 @@ Topological sort could also be done via BFS.
 */
 
 //与207题类似 拓扑排序 有向图问题
-
 class Solution {
 public:
 	vector<int> findOrder(int numCourses, vector<pair<int, int>>& prerequisites) {
