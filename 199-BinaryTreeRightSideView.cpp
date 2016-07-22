@@ -1,3 +1,4 @@
+//Binary Tree Right Side View 二叉树的右侧视图
 /*
 Given a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see ordered from top to bottom.
 
@@ -8,10 +9,9 @@ Given the following binary tree,
 2     3         <---
  \     \
   5     4       <---
-  
-  You should return [1, 3, 4].
-*/
 
+You should return [1, 3, 4].
+*/
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -23,7 +23,8 @@ Given the following binary tree,
  */
 
 //层次遍历每一层最后一个节点，由上往下
-//复杂度 logn 空间复杂度 1 ???
+//复杂度 logn 空间复杂度 1 
+//实际上是求二叉树层序遍历的一种变形，我们只需要保存每一层最右边的数字即可
 class Solution {
 public:
 	vector<int> rightSideView(TreeNode* root) {
@@ -48,7 +49,6 @@ public:
 			}
 			result.push_back(curr->val);
 		}
-		
 		return result;
 	}
 };

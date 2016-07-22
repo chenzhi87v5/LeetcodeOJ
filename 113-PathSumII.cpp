@@ -1,3 +1,4 @@
+//Path Sum II 二叉树路径之和之二
 /*
 Given a binary tree and a sum, find all root-to-leaf paths where each path's sum equals the given sum.
 
@@ -17,7 +18,6 @@ Given the below binary tree and sum = 22,
   [5,8,4,5]
 ]
 */
-
 /**
   * Definition for a binary tree node.
   * struct TreeNode {
@@ -29,7 +29,6 @@ Given the below binary tree and sum = 22,
   */
 
 //1-:本题求路径（所有）左子树求到满意结果不能return 还要继续求右子树 
-
 class Solution {
 public:
 	vector<vector<int>> pathSum(TreeNode* root, int sum) {

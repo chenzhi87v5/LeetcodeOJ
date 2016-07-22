@@ -22,7 +22,6 @@ Note: Recursive solution is trivial, could you do it iteratively?
   *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
   * };
   */
-
 //1-:递归法很简单(Easy)
 //2-:迭代法 使用栈
 class Solution {

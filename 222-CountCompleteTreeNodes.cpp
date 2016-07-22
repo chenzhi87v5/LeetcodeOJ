@@ -15,7 +15,7 @@ In a complete binary tree every level, except possibly the last, is completely f
  * };
  */
 
-//如果从某节点一直向左的高度 = 一直向右的高度, 那么以该节点为root的子树一定是complete binary tree. 而 complete binary tree的节点数,可以用公式算出 2^h - 1. 如果高度不相等, 则递归调用 return countNode(left) + countNode(right) + 1.  复杂度为O(h^2)
+//如果从某节点一直向左的高度 = 一直向右的高度, 那么以该节点为root的子树一定是满二叉树. 而满二叉树的节点数,可以用公式算出 2^h - 1. 如果高度不相等, 则递归调用 return countNode(left) + countNode(right) + 1.  复杂度为O(h^2)
 //pow( , ) 数学计算公式n^m
 class Solution {
 public:
@@ -28,7 +28,7 @@ public:
 		int leftdepth = 0;
 		int rightdepth = 0;
 		
-		while (lt) {          //计算树的深度
+		while (lt) {          		//计算树的深度
 			leftdepth++;
 			lt = lt->left;
 		}

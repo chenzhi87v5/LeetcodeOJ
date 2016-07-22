@@ -1,17 +1,14 @@
+//Populating Next Right Pointers in Each Node 每个节点的右向指针
 /*
 Given a binary tree
-
     struct TreeLinkNode {
           TreeLinkNode *left;
 	  TreeLinkNode *right;
 	  TreeLinkNode *next;
     }
 Populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set to NULL.
-
 Initially, all next pointers are set to NULL.
-
 Note:
-
 	You may only use constant extra space.
 	You may assume that it is a perfect binary tree (ie, all leaves are at the same level, and every parent has two children).
 
@@ -19,11 +16,11 @@ For example,
 Given the following perfect binary tree,
          1
         / \
-      2    3
-     / \  / \
-    4  5  6  7
+       2    3
+      / \  / \
+     4  5  6  7
     
-    After calling your function, the tree should look like:
+After calling your function, the tree should look like:
     		1 -> NULL
        	       / \
 	      2 -> 3 -> NULL
@@ -39,7 +36,6 @@ Given the following perfect binary tree,
   * };
   */
 
-//1-: 递归法 与 迭代法
 //使用迭代法 使用 双队列 类似二叉树的层次遍历
 class Solution {
 public:
@@ -47,8 +43,7 @@ public:
 		if (root == NULL)
 			return;
 		queue<TreeLinkNode*> current, next;    //双队列
-		current.push(root);
-	
+		current.push(root);	
 		while (!current.empty()) {
 			while(!current.empty()) {
 				TreeLinkNode* node = current.front();
@@ -68,32 +63,7 @@ public:
 			}
 			swap(current, next);
 		}
-
 		return;
-	}
-};
-
-//递归法：时间复杂度n 空间复杂度logn
-//思路比较复杂
-class Solution {
-public:
-	void connect(TreeLinkNode *root) {
-		connect(root, NULL);
-	}
-
-private:
-	void connect(TreeLinkNode *root, TreeLinkNode *sibling) { //sibling root平行的下一个分支
-		if (root == NULL)   //剪枝，返回
-			return;
-		else
-			root->next = sibling;
-
-		connect(root->left, root->right); //考虑root 下一层
-
-		if (sibling)
-			connect(root->right, sibling->left);  
-		else
-			connect(root->right, NULL); 
 	}
 };
 

@@ -1,7 +1,7 @@
+//Convert Sorted Array to Binary Search Tree 将有序数组转为二叉搜索树
 /*
 Given an array where elements are sorted in ascending order, convert it to a height balanced BST. 
 */
-
 /**
   * Definition for a binary tree node.
   * struct TreeNode {
@@ -12,8 +12,7 @@ Given an array where elements are sorted in ascending order, convert it to a hei
   * };
   */
 
-//1-:二叉搜索树的构建 BST 高度平衡
-//二分法实现
+//1-:二叉搜索树的构建 BST 高度平衡  二分法实现
 class Solution {
 public:
 	TreeNode* sortedArrayToBST(vector<int>& nums) {
@@ -39,24 +38,3 @@ public:
 	}
 };
 
-//法二：
-class Solution {
-public:
-	TreeNode* sortedArrayToBST (vector<int>& num) {
-		return sortedArrayToBST(num.begin(), num.end());
-	}
-	
-	template<typename RAIterator>
-	TreeNode* sortedArrayToBST (RAIterator first, RAIterator last) {
-		const auto length = distance(first, last);
-		if (length <= 0) 
-			return nullptr; // 终止条件
-		
-		// 三方合并
-		auto mid = first + length / 2;
-		TreeNode* root = new TreeNode (*mid);
-		root->left = sortedArrayToBST(first, mid);
-		root->right = sortedArrayToBST(mid + 1, last);
-		return root;
-	}
-};

@@ -1,6 +1,6 @@
+//Same Tree 判断相同树
 /*
 Given two binary trees, write a function to check if they are equal or not.
-
 Two binary trees are considered equal if they are structurally identical and the nodes have the same value.
 */
 
@@ -13,7 +13,6 @@ Two binary trees are considered equal if they are structurally identical and the
   *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
   * };
   */
-
 //1-: 递归
 class Solution {
 public:

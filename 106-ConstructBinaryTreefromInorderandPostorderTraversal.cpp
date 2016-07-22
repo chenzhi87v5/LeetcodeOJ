@@ -15,35 +15,6 @@ You may assume that duplicates do not exist in the tree.
   *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
   * };
 */
-
-//1-:中序遍历 与 后序遍历 构建二叉树
-//STL : prev() An iterator to the element n positions before it.
-class Solution {
-public:
-	TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) {
-		return buildTree(begin(inorder), end(inorder), begin(postorder), end(postorder));
-	}
-
-	template<typename BidiIt>
-	TreeNode* buildTree(BidiIt in_first, BidiIt in_last, BidiIt post_first, BidiIt post_last) {
-		if (in_first == in_last)
-			return NULL;
-		if (post_first == post_last)
-			return NULL;
-
-		const auto val = *prev(post_last);
-		TreeNode *root = new TreeNode(val);
-
-		auto in_root_pos = find(in_first, in_last, val);   //关键点
-		auto left_size = distance(in_first, in_root_pos);
-		auto post_left_last = next(post_first, left_size);
-		
-		root->left = buildTree(in_first, in_root_pos, post_first, post_left_last);
-		root->right = buildTree(next(in_root_pos), in_last, post_left_last, prev(post_last));
-		
-		return root;
-	}
-};
 /*
 这道题要求从中序和后序遍历的结果来重建原二叉树，我们知道中序的遍历顺序是左-根-右，后序的顺序是左-右-根，对于这种树的重建一般都是采用递归来做，可参见我之前的一篇博客Convert Sorted Array to Binary Search Tree 将有序数组转为二叉搜索树。针对这道题，由于后序的顺序的最后一个肯定是根，所以原二叉树的根节点可以知道，题目中给了一个很关键的条件就是树中没有相同元素，有了这个条件我们就可以在中序遍历中也定位出根节点的位置，并以根节点的位置将中序遍历拆分为左右两个部分，分别对其递归调用原函数。代码如下：
 */
@@ -61,10 +32,8 @@ public:
 		for (i = iLeft; i < inorder.size(); ++i) {
 			if (inorder[i] == cur->val) break;
 		}
-		
 		cur->left = buildTree(inorder, iLeft, i - 1, postorder, pLeft, pLeft + i - iLeft - 1);
 		cur->right = buildTree(inorder, i + 1, iRight, postorder, pLeft + i - iLeft, pRight - 1);
-		
 		return cur;
 	}
 }
