@@ -1,6 +1,7 @@
 //Combination Sum 组合之和
 /*
-Given a set of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
+Given a set of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers 
+sums to T.
 The same repeated number may be chosen from C unlimited number of times.
 
 Note:
@@ -14,9 +15,6 @@ A solution set is:
 [2, 2, 3] 
 */
 
-#include<iostream>
-#include<algorithm>
-using namespace std;
 
 //递归法 深度优先算法 
 // 时间复杂度O(n!)，空间复杂度O(n)
@@ -29,7 +27,8 @@ using namespace std;
 	       Permutations II 全排列之二，
 	       Combinations 组合项等等，
 
-如果仔细研究这些题目发现都是一个套路，都是需要另写一个递归函数，这里我们新加入三个变量，start记录当前的递归到的下标，intermediate为一个解，result保存所有已经得到的解，每次调用新的递归函数时，此时的target要减去当前数组的的数，具体看代码如下： 
+如果仔细研究这些题目发现都是一个套路，都是需要另写一个递归函数，这里我们新加入三个变量，start记录当前的递归到的下标，
+intermediate为一个解，result保存所有已经得到的解，每次调用新的递归函数时，此时的target要减去当前数组的的数，具体看代码如下： 
 */
 class Solution {
 public:
@@ -59,11 +58,3 @@ private:
 	}
 };
 
-//Test main函数
-int main() {
-	Solution A;
-	vector<vector<int>> tmp;
-	vector<int> candidates = {1, 1, 1}, t;
-	tmp = A.combinationSum(candidates, 1);
-	return 0;
-}

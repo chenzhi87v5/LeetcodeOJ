@@ -13,7 +13,7 @@ Given encoded message "12", it could be decoded as "AB" (1 2) or "L" (12).
 The number of ways decoding "12" is 2.
 */
 
-//动态规划 类似Climbing Stairs   dp
+//动态规划 类似Climbing Stairs   
 //f(n) = f(n - 1) + f(n - 2)
 //nums[i] 表示字符串s[0]到s[i - 1]解码方法
 class Solution {

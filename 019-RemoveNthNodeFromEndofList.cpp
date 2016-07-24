@@ -16,7 +16,7 @@ For example,
  */
 //(只需要扫描一遍)使用两个指针,前一个先走n步
 // new delete 的使用： ListNode *res = new ListNode(0);  delete res
-//考虑异常 空指针 链表长度不足N 移除头指针 参数检测  防御性编程
+//1. 考虑异常 空指针 2.链表长度不足N  3.移除头指针  参数检测防御性编程
 class Solution {
 public:
 	ListNode* removeNthFromEnd(ListNode* head, int n) {

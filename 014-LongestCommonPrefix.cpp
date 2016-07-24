@@ -3,15 +3,10 @@
 Write a function to find the longest common prefix string amongst an array of strings. 
 */
 
-
 //2-1 纵向比较 ---
 //2-2 横向比较 ---每个字符串与第0个字符串比较
 
 //注意：vector 的使用 类似数组[]或者使用迭代器iterator
-#include<iostream>
-#include<vector>
-using namespace std;
-
 class Solution {
 public:
 	string longestCommonPrefix(vector<string>& strs) {

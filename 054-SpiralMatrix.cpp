@@ -14,10 +14,6 @@ Given the following matrix:
 You should return [1,2,3,6,9,8,7,4,5].
 */
 
-#include<iostream>
-#include<vector>
-using namespace std;
-
 //1-:模拟读取螺旋矩阵
 class Solution {
 public:
@@ -57,15 +53,3 @@ public:
 		return result;
 	}
 };
-
-//Test main函数
-int main() {
-	Solution A;
-	vector<vector<int>> matrix;
-
-	matrix.push_back({1, 2, 3});
-	matrix.push_back({4, 5, 6});
-	matrix.push_back({6, 7, 9});
-	//A.spiralOrder(matrix);
-	return 0;
-}

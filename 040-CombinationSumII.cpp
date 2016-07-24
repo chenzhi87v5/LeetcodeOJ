@@ -15,13 +15,10 @@ A solution set is:
 [2, 6] 
 [1, 1, 6] 
 */
-#include<iostream>
-#include<algorithm>
-
-using namespace std;
-
 /*
-这道题跟之前那道 Combination Sum 组合之和 本质没有区别，只需要改动一点点即可，之前那道题给定数组中的数字可以重复使用，而这道题不能重复使用，只需要在之前的基础上修改两个地方即可，首先在递归的for循环里加上if (i > start && num[i] == num[i - 1]) continue; 这样可以防止result中出现重复项，然后就在递归调用dfs里面的参数换成i+1，这样就不会重复使用数组中的数字了，代码如下： 
+这道题跟之前那道 Combination Sum 组合之和 本质没有区别，只需要改动一点点即可，之前那道题给定数组中的数字可以重复使用，
+而这道题不能重复使用，只需要在之前的基础上修改两个地方即可，首先在递归的for循环里加上if (i > start && num[i] == num[i - 1]) 
+continue; 这样可以防止result中出现重复项，然后就在递归调用dfs里面的参数换成i+1，这样就不会重复使用数组中的数字了，代码如下： 
 */
 class Solution {
 public:
@@ -57,11 +54,3 @@ private:
 	}
 };
 
-//Test main函数
-int main() {
-	Solution A;
-	vector<vector<int>> tmp;
-	vector<int> candidates = {1, 1, 1}, t;
-	tmp = A.combinationSum2(candidates, 1);
-	return 0;
-}

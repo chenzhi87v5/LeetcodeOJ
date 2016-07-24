@@ -15,7 +15,8 @@ There is one obstacle in the middle of a 3x3 grid as illustrated below.
 */
 
 /*
-这道题是之前那道 Unique Paths 不同的路径 的延伸，在路径中加了一些障碍物，还是用动态规划Dynamic Programming来解，不同的是当遇到为1的点，将该位置的dp数组中的值清零，其余和之前那道题并没有什么区别，代码如下： 
+这道题是之前那道 Unique Paths 不同的路径 的延伸，在路径中加了一些障碍物，还是用动态规划Dynamic Programming来解，
+不同的是当遇到为1的点，将该位置的dp数组中的值清零，其余和之前那道题并没有什么区别，代码如下： 
 */
 
 class Solution {
@@ -37,27 +38,4 @@ public:
 		return dp.back().back();
 	}
 };
-
-/*
-或者我们也可以使用一维dp数组来解，省一些空间，参见代码如下：
-*/
-// DP
-class Solution {
-public:
-	int uniquePathsWithObstacles(vector<vector<int> > &obstacleGrid) {
-		if (obstacleGrid.empty() || obstacleGrid[0].empty()) return 0;
-		int m = obstacleGrid.size(), n = obstacleGrid[0].size();
-		if (obstacleGrid[0][0] == 1) return 0;
-		vector<int> dp(n, 0);
-		dp[0] = 1;
-		for (int i = 0; i < m; i++) {
-			for (int j = 0; j < n; j++) {
-				if (obstacleGrid[i][j] == 1) dp[j] = 0;
-				else if (j > 0) dp[j] += dp[j - 1];
-			}
-		}
-
-		return dp[n - 1];
-	}
-}
 
