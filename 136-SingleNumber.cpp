@@ -6,8 +6,7 @@ Your algorithm should have a linear runtime complexity. Could you implement it w
 */
 
 //异或，不仅能处理两次的情况，只要出现偶数次，都可以清零
-// ^ 异或 每一位相同取0 不同取1
-
+// ^ 异或 每一位相同取 0 不同取 1
 class Solution {
 public:
 	int singleNumber(vector<int>& nums) {

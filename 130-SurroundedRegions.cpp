@@ -62,15 +62,15 @@ private:
 		int m = board.size();
 		int n = board[0].size();
 
-		typedef pair<int, int> point;    //使用pair 以及typedef
-		queue<point> Q;                  //队列
+		typedef pair<int, int> point;    	//使用pair 以及typedef
+		queue<point> Q;                  	//队列
 		Q.push(point(i, j));
 		board[i][j] = 'E';
 		while (!Q.empty()) {
 			point tmp = Q.front();
 			Q.pop();
 
-			int x = tmp.first;         //pair取值方法
+			int x = tmp.first;         	//pair取值方法
 			int y = tmp.second;
 
 			//扩展 point(x, y)节点上下左右进行

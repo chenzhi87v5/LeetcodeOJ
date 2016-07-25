@@ -34,7 +34,6 @@ public:
 		}
 		
 		prev->next = NULL;  	//中间节点减掉
-
 		slow = reverse(slow);  	//头插法翻转链表 （精辟）
 
 		//合并两个链表

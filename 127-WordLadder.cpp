@@ -1,6 +1,7 @@
 //Word Ladder 词语阶梯
 /*
-Given two words (beginWord and endWord), and a dictionary's word list, find the length of shortest transformation sequence from beginWord to endWord, such that:
+Given two words (beginWord and endWord), and a dictionary's word list, find the length of shortest transformation 
+sequence from beginWord to endWord, such that:
 	1.Only one letter can be changed at a time
 	2.Each intermediate word must exist in the word list
 For example,
@@ -12,13 +13,11 @@ wordList = ["hot","dot","dog","lot","log"]
 
 As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",
 return its length 5.
-
 Note:
 	Return 0 if there is no such transformation sequence.
 	All words have the same length.
 	All words contain only lowercase alphabetic characters.
 */
-
 //1-:广度优先搜索
 //unordered_set 数据结构   //1.关联容器map与set  //2.顺序容器 vector list deque stack queue
 class Solution {

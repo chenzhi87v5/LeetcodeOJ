@@ -3,7 +3,6 @@
 Given numRows, generate the first numRows of Pascal's triangle.
 For example, given numRows = 5,
 Return
-
 [
         [1],
        [1,1],
@@ -13,7 +12,7 @@ Return
 ]
 */
 /*
-  具体生成算是：每一行的首个和结尾一个数字都是1，从第三行开始，中间的每个数字都是上一行的左右两个数字之和。代码如下：
+具体生成算是：每一行的首个和结尾一个数字都是1，从第三行开始，中间的每个数字都是上一行的左右两个数字之和。代码如下：
 */
 class Solution {
 public:
@@ -37,7 +36,6 @@ public:
 
 			result.push_back(current);
 		}
-
 		return result;
 	}
 };

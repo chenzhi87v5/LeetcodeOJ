@@ -1,6 +1,7 @@
 //Triangle 三角形 
 /*
-Given a triangle, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.
+Given a triangle, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers 
+on the row below.
 
 For example, given the following triangle
 [
@@ -12,7 +13,8 @@ For example, given the following triangle
 
 The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 + 1 = 11).
 Note:
-	Bonus point if you are able to do this using only O(n) extra space, where n is the total number of rows in the triangle.
+	Bonus point if you are able to do this using only O(n) extra space, where n is the total number of rows 
+in the triangle.
 */
 
 /*
@@ -31,8 +33,8 @@ public:
 		if(triangle.size() == 1)
 			return triangle[0][0];
 		
-		for (int i = triangle.size() - 2; i >= 0; i--) {  //倒数第二排开始
-			for (int j = 0 ; j <= i; j++) {           //倒数一排最小的相邻值与倒数二排相加
+		for (int i = triangle.size() - 2; i >= 0; i--) {  	//倒数第二排开始
+			for (int j = 0 ; j <= i; j++) {           	//倒数一排最小的相邻值与倒数二排相加
 				triangle[i][j] += min(triangle[i + 1][j], triangle[i + 1][j + 1]); 
 			}
 		}
