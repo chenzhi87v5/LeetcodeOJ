@@ -8,7 +8,7 @@ Note: The result may be very large, so you need to return a string instead of an
 //理解题意，注意考虑边界特殊情况比如数字最前面的0
 //转换成数字转换为string比大小（自定义比较函数，排序排序），注意特殊情况
 #include<sstream>   //stream
-//自定义比较函数
+
 bool cmp(const string s1, const string s2) {
 	return (s1 + s2) > (s2 + s1);
 }
@@ -20,7 +20,7 @@ public:
 		stringstream stream;			//stringstream的使用
 		
 		for (int i = 0; i < nums.size(); i++) {
-			stream << nums[i];              //stringstream << >> .clear()
+			stream << nums[i];              //stringstream.clear()   //转化成string 也可用to_string();
 			stream >> s_num[i];
 			stream.clear();
 		}	

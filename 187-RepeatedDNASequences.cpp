@@ -1,6 +1,7 @@
 //Repeated DNA Sequences 求重复的DNA序列
 /*
-All DNA is composed of a series of nucleotides abbreviated as A, C, G, and T, for example: "ACGAATTCCG". When studying DNA, it is sometimes useful to identify repeated sequences within the DNA.
+All DNA is composed of a series of nucleotides abbreviated as A, C, G, and T, for example: "ACGAATTCCG". When studying DNA
+, it is sometimes useful to identify repeated sequences within the DNA.
 Write a function to find all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule.
 
 For example,
@@ -36,11 +37,11 @@ public:
 		unordered_set<int> hash;             //hash组织的set unodered_set  关键字不可以重复出现
 		unordered_set<string> tmp_res;
 		
-		if (s.size() <= 10)      //边界检测
+		if (s.size() <= 10)      	     //边界检测
 			return result;
 
 		for (int i = 9; i < s.size(); i++) {
-			string subs = s.substr(i - 9, 10);        //substr() 用法
+			string subs = s.substr(i - 9, 10);  //substr() 用法
 			int sum = encode(subs);
 			if (hash.find(sum) != hash.end()) {
 				tmp_res.insert(subs);

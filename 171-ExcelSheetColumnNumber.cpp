@@ -1,9 +1,7 @@
 //Excel Sheet Column Number 求Excel表列序号
 /*
 Related to question Excel Sheet Column Title
-
 Given a column title as appear in an Excel sheet, return its corresponding column number.
-
 For example:
 
     A -> 1
@@ -14,7 +12,6 @@ For example:
     AA -> 27
     AB -> 28 
 */
-
 //这题实际上相当于一种二十六进制转十进制的问题，并不难，只要一位一位的转换即可。代码如下：
 class Solution {
 public:

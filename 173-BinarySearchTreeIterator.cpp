@@ -13,7 +13,6 @@ Note: next() and hasNext() should run in average O(1) time and uses O(h) memory,
   *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
   * };
   */
-
 //理解题意 中序遍历思想  下一个最小的节点值
 class BSTIterator {
 public:
@@ -40,8 +39,7 @@ public:
 		current = myStack.top();
 		myStack.pop();
 		TreeNode *nxt = current;
-		current = current->right;
-		
+		current = current->right;	
 		return nxt->val;
 	}
 };

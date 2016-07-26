@@ -1,6 +1,7 @@
 //Binary Tree Right Side View 二叉树的右侧视图
 /*
-Given a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see ordered from top to bottom.
+Given a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see 
+ordered from top to bottom.
 
 For example:
 Given the following binary tree,
@@ -33,7 +34,7 @@ public:
 			return result;
 		queue<TreeNode *> que;   //层次访问，使用队列
 		que.push(root);
-		TreeNode *curr;         //当前节点
+		TreeNode *curr;          //当前节点
 
 		while(!que.empty()) {
 			int cnt = que.size();
