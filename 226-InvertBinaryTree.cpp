@@ -14,7 +14,8 @@ Invert a binary tree.
  / \   / \
 9   6 3   1
 
-Google: 90% of our engineers use the software you wrote (Homebrew), but you can’t invert a binary tree on a whiteboard so fuck off.
+Google: 90% of our engineers use the software you wrote (Homebrew), but you can’t invert a binary tree on a whiteboard 
+so fuck off.
 */
 
 //
@@ -48,7 +49,8 @@ public:
 	}
 };
 
-//非递归的方法也不复杂，跟二叉树的层序遍历一样，需要用queue来辅助，先把根节点排入队列中，然后从队中取出来，交换其左右节点，如果存在则分别将左右节点在排入队列中，以此类推直到队列中木有节点了停止循环，返回root即可。代码如下：
+//非递归的方法也不复杂，跟二叉树的层序遍历一样，需要用queue来辅助，先把根节点排入队列中，然后从队中取出来，交换其左右节点i
+//，如果存在则分别将左右节点在排入队列中，以此类推直到队列中木有节点了停止循环，返回root即可。代码如下：
 class Solution {
 public:
 	TreeNode* invertTree(TreeNode* root) {
@@ -63,7 +65,6 @@ public:
 			if (node->left) q.push(node->left);
 			if (node->right) q.push(node->right);
 		}
-
 		return root;
 	}
 }

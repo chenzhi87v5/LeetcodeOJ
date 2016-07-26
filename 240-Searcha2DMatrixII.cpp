@@ -4,8 +4,8 @@ Write an efficient algorithm that searches for a value in an m x n matrix. This 
 
 	Integers in each row are sorted in ascending from left to right.
 	Integers in each column are sorted in ascending from top to bottom.
-For example,
 
+For example,
 Consider the following matrix:
 
 [
@@ -20,8 +20,7 @@ Given target = 5, return true.
 Given target = 20, return false.
 */
 
-//矩阵中搜索一个值
-//左下角开始 如果小于则列加 如果大于 则行减
+//矩阵中搜索一个值    左下角开始 如果小于则列加 如果大于 则行减
 class Solution {
 public:
 	bool searchMatrix(vector<vector<int>>& matrix, int target) {
@@ -42,7 +41,6 @@ public:
 				i--;
 			}
 		}
-
 		return false;
 	}
 };

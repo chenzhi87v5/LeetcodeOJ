@@ -1,16 +1,15 @@
 //Single Number III 单独的数字之三
 /*
-Given an array of numbers nums, in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once.
+Given an array of numbers nums, in which exactly two elements appear only once and all the other elements appear exactly 
+twice. Find the two elements that appear only once.
 
-For example:
-Given nums = [1, 2, 1, 3, 2, 5], return [3, 5].
+For example:  Given nums = [1, 2, 1, 3, 2, 5], return [3, 5].
 
 Note:
   The order of the result is not important. So in the above example, [5, 3] is also correct.
   Your algorithm should run in linear runtime complexity. Could you implement it using only constant space complexity?
 */
 
-//找出两个出现一次的数字
 //如何将二者分开 网友的介绍是利用两个元素的异或值（说明，要找的元素的对应位不同），利用这个特点将原有的序列分为两部分
 class Solution {
 public:

@@ -14,10 +14,12 @@ You may assume pattern contains only lowercase letters, and str contains lowerca
 
 /*
 使用Map:
-定义一个map，每遇到一个新的模式，以模式为key，将对应的单词存入map；遇到map里已有的模式，检查当前str的单词是否与map记载模式所对应的value值相同，只要出现不同，直接返回false。
+定义一个map，每遇到一个新的模式，以模式为key，将对应的单词存入map；遇到map里已有的模式，检查当前str的单词是否与map记载模式
+所对应的value值相同，只要出现不同，直接返回false。
 
 这种判断方法可以解决：pattern = "abba", str = "dog cat cat fish"这种情况。
-但是，只使用一个map无法判断这种情况：pattern = "abba", str = "dog dog dog dog"，一开始a作为一个新模式，被存入map，到了第二次迭代，b作为一个新模式，也被存入map，dog被分配到两个不同的模式，显然这是不对的。
+但是，只使用一个map无法判断这种情况：pattern = "abba", str = "dog dog dog dog"，一开始a作为一个新模式，被存入map，到了第二
+次迭代，b作为一个新模式，也被存入map，dog被分配到两个不同的模式，显然这是不对的。
 
 为了解决这个问题，需要两个map。另一个map2用于记载单词与模式的对应关系。
 总的来说，map1用于记载模式到单词的对应关系，但可能出现多个模式对应到同个单词的情形。
@@ -29,7 +31,7 @@ public:
 	bool wordPattern(string pattern, string str) {
 		unordered_map<char, string> map1;   	//模式对应单词
 		unordered_map<string, char> map2;	//单词对应模式
-		vector<string> vec;  			 //逐个存储单词
+		vector<string> vec;  			//逐个存储单词
 
 		//以下操作分割str为多个单词
 		for (int i = 0, j = 0; i < str.size(); i++) {

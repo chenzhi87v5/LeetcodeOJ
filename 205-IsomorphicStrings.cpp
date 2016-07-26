@@ -2,7 +2,8 @@
 /* 
 Given two strings s and t, determine if they are isomorphic.
 Two strings are isomorphic if the characters in s can be replaced to get t.
-All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character but a character may map to itself.
+All occurrences of a character must be replaced with another character while preserving the order of characters. No two 
+characters may map to the same character but a character may map to itself.
 
 For example,
 Given "egg", "add", return true.
@@ -17,7 +18,9 @@ Given "paper", "title", return true.
 */
 
 /*
-这道题让我们求同构字符串，就是说原字符串中的每个字符可由另外一个字符替代，可以被其本身替代，相同的字符一定要被同一个字符替代，且一个字符不能被多个字符替代，即不能出现一对多的映射。根据一对一映射的特点，我们需要用两个哈希表分别来记录原字符串和目标字符串中字符出现情况 
+这道题让我们求同构字符串，就是说原字符串中的每个字符可由另外一个字符替代，可以被其本身替代，相同的字符一定要被同一个字符
+替代，且一个字符不能被多个字符替代，即不能出现一对多的映射。根据一对一映射的特点，我们需要用两个哈希表分别来记录原字符串
+和目标字符串中字符出现情况 
 */
 class Solution {
 public:

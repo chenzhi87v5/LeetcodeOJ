@@ -1,6 +1,7 @@
 //Contains Duplicate III 包含重复值之三
 /*
-Given an array of integers, find out whether there are two distinct indices i and j in the array such that the difference between nums[i] and nums[j] is at most t and the difference between i and j is at most k. 
+Given an array of integers, find out whether there are two distinct indices i and j in the array such that the difference 
+between nums[i] and nums[j] is at most t and the difference between i and j is at most k. 
 */
 
 //求数组是否存在 |nums[i] - nums[j]| <= t && |i - j| <= k True Or False 

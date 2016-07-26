@@ -1,8 +1,10 @@
 //Game of Life 生命游戏
 /*
-According to the Wikipedia's article: "The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970."
+According to the Wikipedia's article: "The Game of Life, also known simply as Life, is a cellular automaton devised by the 
+British mathematician John Horton Conway in 1970."
 
-Given a board with m by n cells, each cell has an initial state live (1) or dead (0). Each cell interacts with its eight neighbors (horizontal, vertical, diagonal) using the following four rules (taken from the above Wikipedia article):
+Given a board with m by n cells, each cell has an initial state live (1) or dead (0). Each cell interacts with its eight 
+neighbors (horizontal, vertical, diagonal) using the following four rules (taken from the above Wikipedia article):
 
   Any live cell with fewer than two live neighbors dies, as if caused by under-population.
   Any live cell with two or three live neighbors lives on to the next generation.
@@ -12,12 +14,15 @@ Given a board with m by n cells, each cell has an initial state live (1) or dead
 Write a function to compute the next state (after one update) of the board given its current state.
 
 Follow up: 
-  Could you solve it in-place? Remember that the board needs to be updated at the same time: You cannot update some cells first and then use their updated values to update other cells.
-  In this question, we represent the board using a 2D array. In principle, the board is infinite, which would cause problems when the active area encroaches the border of the array. How would you address these problems?
+  Could you solve it in-place? Remember that the board needs to be updated at the same time: You cannot update some cells 
+first and then use their updated values to update other cells.
+  In this question, we represent the board using a 2D array. In principle, the board is infinite, which would cause 
+problems when the active area encroaches the border of the array. How would you address these problems?
 */
 
 /*
-给定一个由0，1组成的矩阵，每一个元素表示一个细胞的存活，1存活，0死亡，其中下一次更新每个细胞的存活由上、下、左、右、左上、左下、右上、右下，八个细胞决定，存活规则如下：
+给定一个由0，1组成的矩阵，每一个元素表示一个细胞的存活，1存活，0死亡，其中下一次更新每个细胞的存活由上、下、左、右、左上、
+左下、右上、右下，八个细胞决定，存活规则如下：
 
 当前细胞为存活状态时，当周围存活细胞不到2个时， 该细胞变成死亡状态。（模拟生命数量稀少）
 当前细胞为存活状态时，当周围有2个或3个存活的细胞时， 该细胞保持原样。
@@ -26,7 +31,8 @@ Follow up:
 
 要求写一个函数，根据矩阵当前的状态，计算这个细胞矩阵的下一个状态。
 
-题目要求in-place操作，考虑到每个元素都受附近8个元素的影响，必须使用一种中间状态来记录元素变化，这种中间状态应该能反应元素变化前和变化后的状态。
+题目要求in-place操作，考虑到每个元素都受附近8个元素的影响，必须使用一种中间状态来记录元素变化，这种中间状态应该能反应元素变
+化前和变化后的状态。
 
 好在题目给出了四种变化状态，比较直观地给出了思路：
 
@@ -35,7 +41,8 @@ Follow up:
 状态2： 活细胞->死细胞 
 状态3： 死细胞->活细胞
 
-对每个元素进行判断，根据附近8个元素及本身的状态可得到状态0~4中的一个，而下一个元素依然可根据上一元素的状态0~4，判断上一元素变化之前是什么状态。
+对每个元素进行判断，根据附近8个元素及本身的状态可得到状态0~4中的一个，而下一个元素依然可根据上一元素的状态0~4，判断上一元素
+变化之前是什么状态。
 
 而对所有元素标记状态0~4后，再一次遍历矩阵，所有元素的状态对2取余，那么状态0和2就变成死细胞，状态1和3就是活细胞，达成目的。
 */

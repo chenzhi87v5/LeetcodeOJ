@@ -21,9 +21,10 @@ All root-to-leaf paths are:
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
 */
+
 /*
-这道题给我们一个二叉树，让我们返回所有根到叶节点的路径，跟之前那道Path Sum II 二叉树路径之和之二很类似，比那道稍微简单一些，不需要计算路径和，只需要无脑返回所有的路径即可，那么思路还是用DFS来解，代码而很简洁，参见如下： 
-*/
+这道题给我们一个二叉树，让我们返回所有根到叶节点的路径，跟之前那道Path Sum II 二叉树路径之和之二很类似，比那道稍微简单一些
+，不需要计算路径和，只需要无脑返回所有的路径即可，那么思路还是用DFS来解，代码而很简洁，参见如下:*/
 class Solution {
 public:
 	vector<string> binaryTreePaths(TreeNode* root) {
