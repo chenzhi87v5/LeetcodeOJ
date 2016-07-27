@@ -28,8 +28,6 @@ public:
 		return acc[j + 1] - acc[i];
 	}
 };
-
-
 // Your NumArray object will be instantiated and called as such:
 // NumArray numArray(nums);
 // numArray.sumRange(0, 1);

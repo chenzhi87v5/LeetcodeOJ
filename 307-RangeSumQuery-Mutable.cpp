@@ -3,7 +3,9 @@
 Given an integer array nums, find the sum of the elements between indices i and j (i ≤ j), inclusive.
 
 The update(i, val) function modifies nums by updating the element at index i to val.
+
 Example:
+ 
  Given nums = [1, 3, 5]
 
  sumRange(0, 2) -> 9
@@ -14,8 +16,6 @@ Note:
 	The array is only modifiable by the update function.
 	You may assume the number of calls to update and sumRange function is distributed evenly.
 */
-
-//Range Sum Query - Immutable 区域和检索 - 不可变的延伸
 /*
 原码，补码和反码。计算机中，数值都是以补码的形式保存
 补码：正数的补码和原码一样;负数的补码，就是在原来的原码基础上，保持符号位不变，其他位取反，然后再加1
@@ -23,7 +23,8 @@ Note:
 */
 
 /*
-这道题我们要使用一种新的数据结构，叫做树状数组Binary Indexed Tree，这是一种查询和修改复杂度均为O(logn)的数据结构。这个树状数组比较有意思，所有的奇数位置的数字和原数组对应位置的相同，偶数位置是原数组若干位置之和 
+这道题我们要使用一种新的数据结构，叫做树状数组Binary Indexed Tree，这是一种查询和修改复杂度均为O(logn)的数据结构。
+这个树状数组比较有意思，所有的奇数位置的数字和原数组对应位置的相同，偶数位置是原数组若干位置之和 
 */
 
 //详细参考 http://www.cnblogs.com/grandyang/p/4985506.html
