@@ -9,7 +9,6 @@ Given [5, 7, 7, 8, 8, 10] and target value 8,
 return [3, 4].
 */
 //真正意义上的O(logn)的算法，使用两次二分查找法，第一次找到左边界，第二次调用找到右边界即可，具体代码如下：
-//使用二分查找寻找左右边界，比较巧妙
 class Solution {
 public:
 	vector<int> searchRange(vector<int>& nums, int target) {

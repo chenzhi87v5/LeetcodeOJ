@@ -1,7 +1,6 @@
 //Permutations 全排列
 /*
 Given a collection of distinct numbers, return all possible permutations.
-
 For example,
 [1,2,3] have the following permutations:
 [1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], and [3,2,1].
@@ -21,7 +20,6 @@ public:
 			result.push_back(tmp);
 			return;
 		}
-		
 		//扩展状态
 		for (auto i : nums) {
 			//查找i是否在tmp中出现过

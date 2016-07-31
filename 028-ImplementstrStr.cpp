@@ -13,12 +13,13 @@ Returns the index of the first occurrence of needle in haystack, or -1 if needle
 class Solution {
 public:
 	int strStr(string haystack, string needle) {
-		//return haystack.find(needle);
+		//法一: STL return haystack.find(needle);
 		int i, j, lenh = haystack.length(), lenn = needle.length();
 		if (lenn == 0)
 			return 0;
 		if (lenh < lenn)
 			return -1;
+		
 		for (i = 0; i <= lenh - lenn; i++) {  //关键
 			for (j = 0; j < lenn; j++)
 				if (haystack[i + j] != needle[j])

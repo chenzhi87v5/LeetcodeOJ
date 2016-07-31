@@ -5,9 +5,7 @@ Rotate the image by 90 degrees (clockwise).
 
 Follow up:
 Could you do this in-place?
-*/
-
-/*
+*//*
 首先以从对角线为轴翻转，然后再以x轴中线上下翻转即可得到结果，如下图所示(其中蓝色数字表示翻转轴)：
 
 1  2  3　　　 　　 9  6  3　　　　　  7  4  1

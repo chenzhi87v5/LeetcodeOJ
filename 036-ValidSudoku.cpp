@@ -6,11 +6,8 @@ The Sudoku board could be partially filled, where empty cells are filled with th
 Sudoku board
 ..
 A partially filled sudoku which is valid.
-*/
-
-/*
+*//*
 There are just 3 rules to Sudoku.
-
 1.Each row must have the numbers 1-9 occuring just once.
 2.Each column must have the numbers 1-9 occuring just once.
 3.And the numbers 1-9 must occur just once in each of the 9 sub-boxes of the grid.

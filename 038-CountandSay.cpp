@@ -19,10 +19,9 @@ public:
 		while (--n) {
 			result = getNext(result);
 		}
-		
+
 		return result;
 	}
-
 	//根据s的读法计算下一个string
 	string getNext(string s) {
 		string ret;

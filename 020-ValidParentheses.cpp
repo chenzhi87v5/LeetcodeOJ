@@ -17,7 +17,7 @@ public:
 		for (auto c : s) {
 			if (c == '(' || c == '[' || c == '{') stk.push(c);
 			else {
-				if (stk.empty()) return false;
+				if (stk.empty()) return false;				//四种异常情况
 				if (c == ')' && stk.top() != '(') return false;
 				if (c == ']' && stk.top() != '[') return false;
 				if (c == '}' && stk.top() != '{') return false;

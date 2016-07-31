@@ -11,12 +11,9 @@ Write the code that will take a string and make this conversion given a number o
 
 string convert(string text, int nRows);
 convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
-*/
-
-/*
+*//*
 这道题刚开始看了半天没看懂是咋样变换的，上网查了些资料，终于搞懂了，就是要把字符串摆成一个之字型的，
 参考了网上这位仁兄的解法 (http://www.cnblogs.com/springfor/p/3889414.html)。
-
 比如有一个字符串 “0123456789ABCDEF”，转为zigzag
 
 当 n = 2 时：
@@ -58,6 +55,7 @@ public:
 
 		string res = "";
 		int size = 2 * numRows - 2;
+
 		for (int i = 0; i < numRows; i++) {
 			for (int j = i; j < s.size(); j += size) {
 				res += s[j];

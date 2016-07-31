@@ -5,22 +5,18 @@ sums to T.
 The same repeated number may be chosen from C unlimited number of times.
 
 Note:
-All numbers (including target) will be positive integers.
-Elements in a combination (a1, a2, … , ak) must be in non-descending order. (ie, a1 ≤ a2 ≤ … ≤ ak).
-The solution set must not contain duplicate combinations.
+	All numbers (including target) will be positive integers.
+	Elements in a combination (a1, a2, … , ak) must be in non-descending order. (ie, a1 ≤ a2 ≤ … ≤ ak).
+	The solution set must not contain duplicate combinations.
 
 For example, given candidate set 2,3,6,7 and target 7, 
 A solution set is: 
 [7] 
 [2, 2, 3] 
 */
-
-
-//递归法 深度优先算法 
 // 时间复杂度O(n!)，空间复杂度O(n)
-/*
-像这种结果要求返回所有符合要求解的题十有八九都是要利用到递归，而且解题的思路都大同小异
-相类似的题目有 
+/*像这种结果要求返回所有符合要求解的题十有八九都是要利用到递归，而且解题的思路都大同小异
+  相类似的题目有 
 	       Path Sum II 二叉树路径之和之二，
 	       Subsets II 子集合之二，
 	       Permutations 全排列，
@@ -33,7 +29,7 @@ intermediate为一个解，result保存所有已经得到的解，每次调用�
 class Solution {
 public:
 	vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
-		vector<vector<int>> result;  //最终结果
+		vector<vector<int>> result;   //最终结果
 		vector<int> intermediate;     //中间结果
 		sort(candidates.begin(), candidates.end()); 
 
@@ -43,7 +39,7 @@ public:
 
 private:
 	void dfs(vector<int>& nums, int gap, int start, vector<int>& intermediate, vector<vector<int>>& result) {
-		if(gap == 0) {  //找到一个合法解
+		if(gap == 0) {  	   //找到一个合法解
 			result.push_back(intermediate);
 			return;
 		}
@@ -53,7 +49,7 @@ private:
 
 			intermediate.push_back(nums[i]); //执行扩展动作
 			dfs(nums, gap - nums[i], i, intermediate, result);
-			intermediate.pop_back(); //撤销动作
+			intermediate.pop_back(); 	 //撤销动作
 		}
 	}
 };

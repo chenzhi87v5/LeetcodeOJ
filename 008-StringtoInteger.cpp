@@ -7,7 +7,6 @@ and ask yourself what are the possible input cases.
 Notes: It is intended for this problem to be specified vaguely (ie, no given input specs). 
 You are responsible to gather all the input requirements up front.
 */
-
 /*各种特殊情况考虑及溢出*/
 /*
 1. 若字符串开头是空格，则跳过所有空格，到第一个非空格字符，如果没有，则返回0.
