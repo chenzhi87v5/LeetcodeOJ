@@ -20,7 +20,8 @@ m[0], num[1])，代码如下：
 class Solution {
 public:
 	int rob(vector<int>& nums) {
-		if (num.size() <= 1) return num.empty() ? 0 : num[0];
+		if (num.size() <= 1) 
+			return num.empty() ? 0 : num[0];
 		vector<int> dp = {num[0], max(num[0], num[1])};
 		
 		for (int i = 2; i < num.size(); ++i) {

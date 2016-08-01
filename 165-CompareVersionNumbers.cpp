@@ -12,7 +12,6 @@ Here is an example of version numbers ordering:
 
 	0.1 < 1.1 < 1.2 < 13.37
 */
-
 //逐位比较就好了，把字符串转化成整型，这样就可以忽略前置0的影响
 //考虑类似 “1.2.3”版本号
 class Solution {

@@ -36,7 +36,7 @@ public:
 		if (d < 0)
 			d = -d;
 
-		res += to_string(n / d);           //to_string(int)  整数转化成string   atoi(string.c_str());string 转int 
+		res += to_string(n / d);           //to_string(int)  整数转化成string   atoi(string.c_str()); string 转int 
 		n = n % d;
 		if (n == 0)
 			return res;

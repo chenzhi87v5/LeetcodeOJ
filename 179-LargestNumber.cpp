@@ -20,7 +20,7 @@ public:
 		stringstream stream;			//stringstream的使用
 		
 		for (int i = 0; i < nums.size(); i++) {
-			stream << nums[i];              //stringstream.clear()   //转化成string 也可用to_string();
+			stream << nums[i];              //stringstream.clear()   //转化成string 也可用to_string(int x);
 			stream >> s_num[i];
 			stream.clear();
 		}	
@@ -32,7 +32,7 @@ public:
 			tmp_res += s_num[i];
 		}
 
-		string res; //要排除tmp_res最前面的0
+		string res;    //要排除tmp_res最前面的0
 		bool flag = false;
 		for (int i = 0; i < tmp_res.size(); i++) {
 			if (tmp_res[i] != '0') {

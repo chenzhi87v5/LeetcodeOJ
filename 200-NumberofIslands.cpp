@@ -29,7 +29,8 @@ public:
 		if (grid[0].size() == 0) {
 			return num;
 		}
-		
+	        
+		//每个点开始DFS	
 		for (int i = 0; i < grid.size(); i++) {
 			for (int j = 0; j < grid[i].size(); j++) {
 				if (dfs(i, j, grid))

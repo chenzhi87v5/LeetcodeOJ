@@ -1,4 +1,4 @@
-//Min Stack 最小栈
+//Min Stack 最小栈    使用辅助栈
 /*
 Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
 push(x) -- Push element x onto stack.
@@ -6,11 +6,8 @@ pop() -- Removes the element on top of the stack.
 top() -- Get the top element.
 getMin() -- Retrieve the minimum element in the stack.
 */
-
-/*
-这道最小栈跟原来的栈相比就是多了一个功能，可以返回该栈的最小值。使用两个栈来实现，一个栈来按顺序存储push进来的数据，另一个
-用来存出现过的最小值。代码如下: 
-*/
+/*这道最小栈跟原来的栈相比就是多了一个功能，可以返回该栈的最小值。使用两个栈来实现，一个栈来按顺序存储push进来的数据，另一个
+用来存出现过的最小值。代码如下: */
 class MinStack {
 public:
 	stack<int> stk, minstk;

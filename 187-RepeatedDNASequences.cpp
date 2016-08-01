@@ -1,4 +1,4 @@
-//Repeated DNA Sequences 求重复的DNA序列
+//Repeated DNA Sequences 求重复的DNA序列    Ignore
 /*
 All DNA is composed of a series of nucleotides abbreviated as A, C, G, and T, for example: "ACGAATTCCG". When studying DNA
 , it is sometimes useful to identify repeated sequences within the DNA.
@@ -43,6 +43,7 @@ public:
 		for (int i = 9; i < s.size(); i++) {
 			string subs = s.substr(i - 9, 10);  //substr() 用法
 			int sum = encode(subs);
+			
 			if (hash.find(sum) != hash.end()) {
 				tmp_res.insert(subs);
 			} else {

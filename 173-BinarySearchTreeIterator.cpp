@@ -1,4 +1,4 @@
-//Binary Search Tree Iterator 二叉搜索树迭代器
+//Binary Search Tree Iterator 二叉搜索树迭代器   Ignore 类似中序遍历
 /*
 Implement an iterator over a binary search tree (BST). Your iterator will be initialized with the root node of a BST.
 Calling next() will return the next smallest number in the BST.
