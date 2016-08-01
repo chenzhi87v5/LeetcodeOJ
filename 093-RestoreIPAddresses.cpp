@@ -4,11 +4,8 @@ Given a string containing only digits, restore it by returning all possible vali
 
 For example:
 Given "25525511135",
-
 return ["255.255.11.135", "255.255.111.35"]. (Order does not matter)
 */
-
-//1-:深搜 + 递归
 //一是只要遇到字符串的子序列或配准问题首先考虑动态规划DP，二是只要遇到需要求出所有可能情况首先考虑用递归。
 class Solution {
 public:

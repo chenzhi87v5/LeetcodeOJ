@@ -22,6 +22,7 @@ class Solution {
 public:
 	ListNode* deleteDuplicates(ListNode* head) {
 		if (!head || !head->next) return head;
+		
 		ListNode *start = head;
 		while (start && start->next) {
 			if (start->val == start->next->val) {

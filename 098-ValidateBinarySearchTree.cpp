@@ -1,7 +1,6 @@
 //Validate Binary Search Tree 验证二叉搜索树
 /*
 Given a binary tree, determine if it is a valid binary search tree (BST).
-
 Assume a BST is defined as follows:
 	The left subtree of a node contains only nodes with keys less than the node's key.
 	The right subtree of a node contains only nodes with keys greater than the node's key.
@@ -39,15 +38,14 @@ private:
 		stack<const TreeNode *> s;
 	
 		while (!s.empty() || p != NULL) {
-			if (p != NULL) {
+			while (p) {
 				s.push(p);
 				p = p->left;
-			} else {
-				p = s.top();
-				s.pop();
-				result.push_back(p->val); 
-				p = p->right; 
 			}
+			p = s.top();
+			s.pop();
+			result.push_back(p->val); 
+			p = p->right; 
 		}
 		return result;
 	}

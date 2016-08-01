@@ -13,7 +13,7 @@ Another corner case is the path might contain multiple slashes '/' together, suc
 	In this case, you should ignore redundant slashes and return "/home/foo".
 */
 
-//按照题意解 有实际价值的项目 使用栈 可以vector 模拟栈
+//按照题意解,有实际价值的项目,使用栈:可以vector模拟栈
 class Solution {
 public:
 	string simplifyPath(string path) {

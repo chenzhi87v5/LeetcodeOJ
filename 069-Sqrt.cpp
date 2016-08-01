@@ -17,6 +17,7 @@ public:
 
 		while(left <= right) {
 			const int mid = left + (right - left) / 2;
+
 			if (x / mid > mid) {                          //精辟：注意不要用x > mid * mid 会溢出
 				left = mid + 1;
 				last_mid = mid;

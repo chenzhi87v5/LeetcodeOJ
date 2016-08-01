@@ -32,7 +32,7 @@ public:
 		int red = 0;
 		int blue = nums.size() - 1;
 
-		for (int i = 0; i < blue + 1;) {    //注意for第三个参数没有
+		for (int i = 0; i <= blue;) {    //注意for第三个参数没有
 			if (nums[i] == 0)
 				swap(nums[i++], nums[red++]);
 			else if (nums[i] == 2)

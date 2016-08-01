@@ -34,11 +34,11 @@ public:
 				cur = cur->next;
 				delete temp;
 			}
-			if (duplicated) {         //删除重复的元素
+			if (duplicated) {               //删除重复的元素
 				ListNode *temp = cur;
 				cur = cur->next;
 				delete temp;
-				continue;
+				continue;               //关键点
 			}
 			prev->next = cur;
 			prev = prev->next;

@@ -9,9 +9,7 @@ return 1->4->3->2->5->NULL.
 Note:
 Given m, n satisfy the following condition:
 1 ≤ m ≤ n ≤ length of list.
-*/
-
-/**
+*//**
   * Definition for singly-linked list.
   * struct ListNode {
   *     int val;
@@ -19,8 +17,6 @@ Given m, n satisfy the following condition:
   *     ListNode(int x) : val(x), next(NULL) {}
   * };
   */
-
-//头插法
 class Solution {
 public:
 	ListNode* reverseBetween(ListNode* head, int m, int n) {
@@ -30,6 +26,7 @@ public:
 		ListNode *prev = &dummy;
 		for (int i = 0 ; i < m - 1; i++)
 			prev = prev->next;
+		
 		ListNode* const head2 = prev;
 		
 		prev = head2->next;
@@ -37,7 +34,7 @@ public:
 		for (int i = m; i < n; i++) {  		//关键部分 循环头插法将prev后cur节点插入head2后面
 			prev->next = cur->next;
 			cur->next = head2->next;
-			head2->next = cur; 		//头插法
+			head2->next = cur; 		
 			cur = prev->next;
 		}
 

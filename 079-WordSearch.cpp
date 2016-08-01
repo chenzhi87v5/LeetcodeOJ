@@ -6,7 +6,6 @@ vertically neighboring. The same letter cell may not be used more than once.
 
 For example,
 Given board =
-
 [
   ['A','B','C','E'],
   ['S','F','C','S'],
@@ -42,11 +41,14 @@ public:
 		return false;
 	}
 private:
-	static bool dfs(const vector<vector<char>>& board, const string &word, int index, int x, int y, vector<vector<bool>> &visited) {
+	static bool dfs(const vector<vector<char>>& board, const string &word, 
+			int index, int x, int y, vector<vector<bool>> &visited) {
+		
 		if (index == word.size())  //收敛条件
 			return true;
 
-		if (x < 0 || y < 0 || x >= board.size() || y >= board[0].size() || visited[x][y] || board[x][y] != word[index])  //剪枝
+		if (x < 0 || y < 0 || x >= board.size() || y >= board[0].size() 
+				|| visited[x][y] || board[x][y] != word[index])   //剪枝
 			return false;
 
 		visited[x][y] = true;

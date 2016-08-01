@@ -1,4 +1,4 @@
-//Maximum Subarray 最大子数组
+//Maximum Subarray 最大连续子序列和经典问题
 /*
 Find the contiguous subarray within an array (containing at least one number) which has the largest sum.
 
@@ -10,7 +10,6 @@ If you have figured out the O(n) solution, try coding another solution using the
 which is more subtle.
 */
 
-//最大连续子序列和经典问题
 //对于数组中的一个数2个选择 1.加入之前的subArray 2.自己另起一个subArray
 /*
 这道题让我们求最大子数组之和，O(n)的解法,那我们就先来看O(n)的解法，定义两个变量res和tmp，其中res保存最终要返回的结果，

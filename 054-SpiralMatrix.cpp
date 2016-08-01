@@ -13,7 +13,6 @@ Given the following matrix:
   
 You should return [1,2,3,6,9,8,7,4,5].
 */
-
 //1-:模拟读取螺旋矩阵
 class Solution {
 public:
