@@ -34,15 +34,18 @@ public:
 		ListNode *slow = head;
 		ListNode *fast = head;
 		ListNode *last = slow;
+		
 		while (fast->next && fast->next->next) {
 			last = slow;
 			slow = slow->next;
 			fast = fast->next->next;
 		}
+		
 		fast = slow->next;
 		last->next = NULL;
 		TreeNode *cur = new TreeNode(slow->val);
-		if (head != slow) cur->left = sortedListToBST(head);    //关键点 if (head != slow)
+		
+		if (head != slow) cur->left = sortedListToBST(head);    //关键点 if (head != slow) 考虐链表两个节点情况
 		cur->right = sortedListToBST(fast);
 		return cur;
 	}

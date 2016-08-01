@@ -1,8 +1,7 @@
 //Symmetric Tree 判断对称树
-/*
-Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
-For example, this binary tree is symmetric:
 
+/*Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
+For example, this binary tree is symmetric:
     1
    / \
   2   2
@@ -27,8 +26,8 @@ Bonus points if you could solve it both recursively and iteratively.
   * };
 */
 
-//1-:判断是否是对称树 两种方法实现  递归 与 迭代
-//递归法
+//判断是否是对称树 两种方法实现  递归 与 迭代
+//法一:递归法
 class Solution {
 public:
 	bool isSymmetric(TreeNode* root) {
@@ -46,14 +45,14 @@ public:
 	}
 };
 
-//迭代法 使用栈
+//法二:迭代法 使用栈
 class Solution {
 public:
 	bool isSymmetric(TreeNode* root) {
 		if (!root)
 			return true;
-		stack<TreeNode *>s;  //栈
 		
+		stack<TreeNode *>s;  //栈
 		s.push(root->left);
 		s.push(root->right);
 		

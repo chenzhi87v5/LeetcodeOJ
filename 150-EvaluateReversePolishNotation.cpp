@@ -28,6 +28,7 @@ public:
 		}
 		if (tokens.size() == 1)
 			return atoi(tokens[0].c_str());
+		
 		stack<int> s;
 		for (int i = 0; i < tokens.size(); i++) {
 			if (tokens[i] != "+" && tokens[i] != "-" && tokens[i] != "*" && tokens[i] != "/") {

@@ -6,8 +6,7 @@ reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…
 You must do this in-place without altering the nodes' values.
 For example,
 Given {1,2,3,4}, reorder it to {1,4,2,3}.
-*/
-/**
+*//**
   * Definition for singly-linked list.
   * struct ListNode {
   *     int val;
@@ -50,17 +49,17 @@ public:
 
 	//头插法翻转链表
 	ListNode* reverse(ListNode *head) {
-		if (head == NULL || head->next == NULL)
+		if (!head || !head->next)
 			return head;
-
-		ListNode *prev = head;
-		for (ListNode *curr = head->next, *next = curr->next; curr;) {		
-			curr->next = prev;
-			prev = curr;
-			curr = next;
-			next = next ? next->next : NULL;
+		ListNode dummy(-1);
+		dummy.next = head;
+		ListNode *cur = head;
+		while (cur->next) {
+			ListNode *tmp = cur->next;
+			cur->next = tmp->next;
+			tmp->next = dummy.next;
+			dummy.next = tmp;
 		}
-		head->next = NULL;
-		return prev;
+		return dummy.next;
 	}
 };

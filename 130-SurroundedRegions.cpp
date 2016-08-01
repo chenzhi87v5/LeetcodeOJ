@@ -15,8 +15,7 @@ X X X X
 X X X X
 X O X X
 
-*/
-//从上下左右四个边界往里走，凡是能碰到的'O'，都是跟边界接壤的，应该保留设置为 'E'
+*///从上下左右四个边界往里走，凡是能碰到的'O'，都是跟边界接壤的，应该保留设置为 'E'
 class Solution {
 public:
 	void solve(vector<vector<char>>& board) {

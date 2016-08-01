@@ -20,6 +20,7 @@ Sort a linked list in O(nlogn) time using constant space complexity.
 	归并排序，
 	堆排序，
 	桶排序等等。。
+
 它们的时间复杂度不尽相同，而这里题目限定了时间必须为O(nlgn)，符合要求只有快速排序，归并排序，堆排序，而根据单链表的特点，
 最适于用归并排序。代码如下： 
 */

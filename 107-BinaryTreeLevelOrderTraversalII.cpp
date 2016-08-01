@@ -18,9 +18,7 @@ return its bottom-up level order traversal as:
   [3]
 ]
 
-*/
-
-/**
+*//**
   * Definition for a binary tree node.
   * struct TreeNode {
   *     int val;

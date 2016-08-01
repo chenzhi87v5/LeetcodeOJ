@@ -1,6 +1,6 @@
 //Binary Tree Level Order Traversal 二叉树层序遍历
-/*
-Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
+
+/*Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
 For example:
 Given binary tree {3,9,20,#,#,15,7},
     3
@@ -14,8 +14,7 @@ return its level order traversal as:
   [9,20],
   [15,7]
 ]
-*/
-/**
+*//**
   * Definition for a binary tree node.
   * struct TreeNode {
   *     int val;
@@ -23,10 +22,9 @@ return its level order traversal as:
   *     TreeNode *right;
   *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
   * };
-*/
-
+  */
 //二叉树的层级遍历 递归  与 迭代 两种实现
-// 递归版 时间复杂度n 空间复杂度n
+//递归版 时间复杂度n 空间复杂度n 
 class Solution {
 public:
 	vector<vector<int>> levelOrder(TreeNode* root) {
