@@ -1,6 +1,6 @@
 //Verify Preorder Serialization of a Binary Tree 验证二叉树的先序序列化
-/*
-One way to serialize a binary tree is to use pre-order traversal. When we encounter a non-null node, we record the node's 
+
+/*One way to serialize a binary tree is to use pre-order traversal. When we encounter a non-null node, we record the node's 
 value. If it is a null node, we record using a sentinel value such as #.
      _9_
     /   \
@@ -31,8 +31,7 @@ Example 3:
 Return false
 */
 
-/*
-这道题给了我们一个类似序列化二叉树后的字符串，关于二叉树的序列化和去序列化可以参见我之前的博客Serialize and Deserialize 
+/*这道题给了我们一个类似序列化二叉树后的字符串，关于二叉树的序列化和去序列化可以参见我之前的博客Serialize and Deserialize 
 Binary Tree，这道题让我们判断给定是字符串是不是一个正确的序列化的二叉树的字符串。那么根据之前那边博客的解法，我们还是要用
 istringsteam来操作字符串，C++里面没有像Java那样有字符串的split函数，可以直接分隔任意字符串，我们只能使用getline这个函数，
 来将字符串流的内容都存到一个vector数组中。我们通过举一些正确的例子，比如"9,3,4,#,#,1,#,#,2,#,6,#,#" 或者"9,3,4,#,#,1,#,#,2,
@@ -45,10 +44,10 @@ istringsteam来操作字符串，C++里面没有像Java那样有字符串的spli
 号，计数器减1，那么到最后计数器应该还是0。下面我们再来看两个返回False的例子，"#,7,6,9,#,#,#"和"7,2,#,2,#,#,#,6,#"，那么通过
 这两个反例我们可以看出，如果根节点为空的话，后面不能再有节点，而且不能有三个连续的#号出现。所以我们再加减计数器的时候，如果
 遇到#号，且此时计数器已经为0了，再减就成负数了，就直接返回False了，因为正确的序列里，任何一个位置i，在[0, i]范围内的#号数都
-不大于数字的个数的。当循环完成后，我们检测计数器是否为0的同时还要看看最后一个字符是不是#号。参见代码如下：
-*/
+不大于数字的个数的。当循环完成后，我们检测计数器是否为0的同时还要看看最后一个字符是不是#号。参见代码如下：*/
+
 #include<sstream>
-// istringstream ss;  getline(ss, str, ',')   将字符串按照指定字符分隔
+			// 精辟  istringstream ss;  getline(ss, str, ',')   将字符串按照指定字符分隔
 class Solution {
 public:
 	bool isValidSerialization(string preorder) {

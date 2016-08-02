@@ -1,10 +1,9 @@
-//Reverse String 翻转字符串
-/*
-Write a function that takes a string as input and returns the string reversed.
+//Reverse String 翻转字符串                  注意反转字符串中的单词题 151
+
+/*Write a function that takes a string as input and returns the string reversed.
 
 Example:
-Given s = "hello", return "olleh".
-*/
+Given s = "hello", return "olleh".*/
 
 //简单
 class Solution {

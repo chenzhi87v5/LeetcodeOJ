@@ -1,6 +1,6 @@
-//Counting Bits 计数位
-/*
-Given a non negative integer number num. For every numbers i in the range 0 ≤ i ≤ num calculate the number of 1's in 
+//Counting Bits 计数位           Ignore
+
+/*Given a non negative integer number num. For every numbers i in the range 0 ≤ i ≤ num calculate the number of 1's in 
 their binary representation and return them as an array.
 
 Example:
@@ -18,7 +18,8 @@ Hint:
 	Or does the odd/even status of the number help you in calculating the number of 1s?
 */
 //从1开始，遇到偶数时，其1的个数和该偶数除以2得到的数字的1的个数相同，遇到奇数时，其1的个数等于该奇数除以2得到的数字的1的个
-//数再加1，参见代码如下： 找规律
+//数再加1，参见代码如下： 
+//找规律  解题
 class Solution {
 public:
 	vector<int> countBits(int num) {

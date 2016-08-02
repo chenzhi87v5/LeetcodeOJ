@@ -1,6 +1,6 @@
-//House Robber III 打家劫舍之三
-/*
-The thief has found himself a new place for his thievery again. There is only one entrance to this area, called the "root."
+//House Robber III 打家劫舍之三                  Ignore
+
+/*The thief has found himself a new place for his thievery again. There is only one entrance to this area, called the "root."
 Besides the root, each house has one and only one parent house. After a tour, the smart thief realized that "all houses in 
 this place forms a binary tree". It will automatically contact the police if two directly-linked houses were broken into 
 on the same night.
@@ -30,7 +30,7 @@ Maximum amount of money the thief can rob = 4 + 5 = 9.
   *     TreeNode *right;
   *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
   * };
- */
+  */
 
 //打家劫舍之三  这道题是之前那两道House Robber II和House Robber的拓展
 
@@ -53,7 +53,7 @@ public:
 		if (!root)
 			return 0;
 
-		if (m.count(root))  	   //hash表中判断是否存在某个值 .count() 函数
+		if (m.count(root))  	      //hash表中判断是否存在某个值 .count() 函数
 			return m[root];
 		
 		int val = 0;
