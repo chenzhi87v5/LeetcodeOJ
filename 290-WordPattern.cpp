@@ -1,6 +1,6 @@
-//Word Pattern 词语模式
-/*
-Given a pattern and a string str, find if str follows the same pattern.
+//Word Pattern 词语模式              好题
+
+/*Given a pattern and a string str, find if str follows the same pattern.
 Here follow means a full match, such that there is a bijection between a letter in pattern and a non-empty word in str.
 
 Examples:
@@ -9,11 +9,9 @@ Examples:
 	pattern = "aaaa", str = "dog cat cat dog" should return false.
 	pattern = "abba", str = "dog dog dog dog" should return false.
 Notes:
-You may assume pattern contains only lowercase letters, and str contains lowercase letters separated by a single space.
-*/
+You may assume pattern contains only lowercase letters, and str contains lowercase letters separated by a single space.*/
 
-/*
-使用Map:
+/*使用Map:
 定义一个map，每遇到一个新的模式，以模式为key，将对应的单词存入map；遇到map里已有的模式，检查当前str的单词是否与map记载模式
 所对应的value值相同，只要出现不同，直接返回false。
 
@@ -23,8 +21,7 @@ You may assume pattern contains only lowercase letters, and str contains lowerca
 
 为了解决这个问题，需要两个map。另一个map2用于记载单词与模式的对应关系。
 总的来说，map1用于记载模式到单词的对应关系，但可能出现多个模式对应到同个单词的情形。
-而map2用于记载单词到模式的对应关系，在判断中同时加入对两个map的判断，才可以分辨所有情况。
-*/
+而map2用于记载单词到模式的对应关系，在判断中同时加入对两个map的判断，才可以分辨所有情况。*/
 
 class Solution {
 public:
@@ -33,7 +30,7 @@ public:
 		unordered_map<string, char> map2;	//单词对应模式
 		vector<string> vec;  			//逐个存储单词
 
-		//以下操作分割str为多个单词
+		//以下操作分割str为多个单词                         //GOOD分隔单词 可以用到反转字符串中单词上面
 		for (int i = 0, j = 0; i < str.size(); i++) {
 			if (i == str.size() - 1) {
 				string temp = str.substr(j, i - j + 1);
@@ -54,7 +51,7 @@ public:
 			if (map1.find(pattern[i]) == map1.end() && map2.find(vec[i]) == map2.end()) {
 				map1.insert(make_pair(pattern[i], vec[i]));
 				map2.insert(make_pair(vec[i], pattern[i]));
-			} else if (map1[pattern[i]] != vec[i]) {
+			} else if (map1[pattern[i]] != vec[i] || map2[vec[i]] != pattern[i]) {
 				return false;
 			}
 		}

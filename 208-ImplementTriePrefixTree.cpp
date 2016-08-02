@@ -1,8 +1,8 @@
 //Implement Trie (Prefix Tree)     实现字典树(前缀树)
-/*  
-Implement a trie with insert, search, and startsWith methods. 
-Note: You may assume that all inputs are consist of lowercase letters a-z.
-*/
+
+/*Implement a trie with insert, search, and startsWith methods. 
+Note: You may assume that all inputs are consist of lowercase letters a-z.*/
+
 class TrieNode {   //节点类
 public:
 	// Initialize your data structure here.

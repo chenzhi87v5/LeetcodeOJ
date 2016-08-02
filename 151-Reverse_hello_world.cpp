@@ -8,27 +8,16 @@ public:
 	void reverseWords(string &s) {
 		if (s.empty()) 
 			return;
-		
-		int i = 0, j = 0, k = 0, wordCount = 0;
-		while (true) {
-			while (i < s.size() && s[i] == ' ') 
-				i++;
-			if (i == s.size()) 
-				break;
-
-			if (wordCount) 
-				s[j++] = ' ';
-			
-			k = j;
-			while (i < s.size() && s[i] != ' ')
-				s[j++] = s[i++];
-			
-			reverseWord(s, k, j - 1);
-			++wordCount;
+		reverseWord(s, 0, s.size() - 1);
+		for (int i = 0, j = 0; i < s.size(); i++) {
+			if (i == s.size() - 1) {
+				reverseWord(s, j, i);
+			}
+			if (s[i] == ' ') {
+				reverseWord(s, j, i - 1);
+				j = i + 1;
+			}
 		}
-		
-		s.resize(j);
-		reverseWord(s, 0, j - 1);
 	}
 
 	void reverseWord(string &s, int i, int j) {

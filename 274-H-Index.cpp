@@ -1,4 +1,4 @@
-//H-Index 求H指数
+//H-Index 求H指数             Ignore
 /*
     Given an array of citations (each citation is a non-negative integer) of a researcher, write a function to compute 
 the researcher's h-index.
@@ -32,7 +32,8 @@ public:
 			return 0;
 		}
 
-		sort(citations.begin(), citations.end(), greater<int>());   //greater<int>() 函数
+		sort(citations.begin(), citations.end(), greater<int>());   //greater<int>() 函数  精辟
+
 		for (int i = 0; i < citations.size(); i++) {
 			if (i >= citations[i]) {
 				return i;

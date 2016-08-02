@@ -1,6 +1,6 @@
-//Peeking Iterator 顶端迭代器
-/*
- Given an Iterator class interface with methods: next() and hasNext(), design and implement a PeekingIterator that support 
+//Peeking Iterator 顶端迭代器	Ignore
+
+/*Given an Iterator class interface with methods: next() and hasNext(), design and implement a PeekingIterator that support 
 the peek() operation -- it essentially peek() at the element that will be returned by the next call to next().
 
 Here is an example. Assume that the iterator is initialized to the beginning of the list: [1, 2, 3].

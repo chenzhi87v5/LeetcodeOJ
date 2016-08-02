@@ -1,6 +1,6 @@
 //Maximal Square 最大正方形
-/*
-Given a 2D binary matrix filled with 0's and 1's, find the largest square containing all 1's and return its area.
+
+/*Given a 2D binary matrix filled with 0's and 1's, find the largest square containing all 1's and return its area.
 
 For example, given the following matrix:
 
@@ -9,8 +9,8 @@ For example, given the following matrix:
 1 1 1 1 1
 1 0 0 1 0
 
-Return 4.
-*/
+Return 4.*/
+
 //最大的正方形  新建一个矩阵 记录正方形边大小 动态规划问题
 class Solution {
 public:
@@ -49,7 +49,6 @@ public:
 			for (int j = 0; j < n; j++)
 				ans = max(ans, f[i][j]);
 		}
-
 		return ans * ans;
 	}
 };

@@ -1,6 +1,6 @@
 //Implement Stack using Queues 用队列来实现栈
-/*
-Implement the following operations of a stack using queues.
+
+/*Implement the following operations of a stack using queues.
 	push(x) -- Push element x onto stack.
 	pop() -- Removes the element on top of the stack.
 	top() -- Get the top element.
@@ -17,8 +17,7 @@ Update (2015-06-11):
 The class name of the Java function had been updated to MyStack instead of Stack.
 */
 
-//用队列实现栈
-//至少两个队列才能实现
+//用队列实现栈  至少两个队列才能实现
 /*
 用两个队列模拟一个堆栈：
 队列a和b
@@ -30,8 +29,7 @@ The class name of the Java function had been updated to MyStack instead of Stack
 
 比如先将1插入队a中 ，现在要将2入栈，则将2插入b总然后将a中的1出列入到b中，b中的元素变为 2 ，1
 a为空，现在要压入3 则将3插入a中 ，依次将b中的2 ，1 出列并加入倒a中 ，a中的元素变为 3，2，1 b为空
-算法保证在任何时候都有一队列为空
-*/
+算法保证在任何时候都有一队列为空*/
 
 class Stack {
 private:

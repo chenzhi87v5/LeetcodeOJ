@@ -1,6 +1,6 @@
 //Implement Queue using Stacks 用栈来实现队列
-/*
-Implement the following operations of a queue using stacks.
+
+/*Implement the following operations of a queue using stacks.
 	push(x) -- Push element x to the back of queue.
 	pop() -- Removes the element from in front of queue.
 	peek() -- Get the front element.
@@ -13,8 +13,7 @@ deque (double-ended queue), as long as you use only standard operations of a sta
 	You may assume that all operations are valid (for example, no pop or peek operations will be called on an 
 empty queue).
 */
-//两个栈实现队列 使其中一个栈一直保持队列的排列顺序
-//类似 两个队列实现栈 
+//两个栈实现队列 使其中一个栈一直保持队列的排列顺序     //类似 两个队列实现栈 
 class Queue {
 private:
 	stack<int> s1;

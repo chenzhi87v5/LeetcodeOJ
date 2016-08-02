@@ -1,6 +1,6 @@
 //Add and Search Word - Data structure design 添加和查找单词-数据结构设计   Trie 单词查找树 Prefix Tree 前缀树实现
-/*
-Design a data structure that supports the following two operations:
+
+/*Design a data structure that supports the following two operations:
 void addWord(word)
 bool search(word)
 search(word) can search a literal word or a regular expression string containing only letters a-z or .. A . 

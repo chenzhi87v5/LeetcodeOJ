@@ -1,6 +1,6 @@
 //Search a 2D Matrix II 搜索一个二维矩阵之二
-/*
-Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
+
+/*Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
 
 	Integers in each row are sorted in ascending from left to right.
 	Integers in each column are sorted in ascending from top to bottom.
@@ -17,8 +17,7 @@ Consider the following matrix:
 ]
 
 Given target = 5, return true.
-Given target = 20, return false.
-*/
+Given target = 20, return false.*/
 
 //矩阵中搜索一个值    左下角开始 如果小于则列加 如果大于 则行减
 class Solution {

@@ -1,4 +1,4 @@
-//Count Primes 质数的个数
+//Count Primes 质数的个数                 Ignore
 /*
 Count the number of prime numbers less than a non-negative number, n. 
 */

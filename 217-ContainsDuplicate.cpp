@@ -8,7 +8,7 @@ appears at least twice in the array, and it should return false if every element
 //法二：使用hash set: unordered_set
 
 /*
-   哈希表，遍历整个数组，如果哈希表里存在，返回false，如果不存在，则将其放入哈希表中，代码如下： 
+哈希表，遍历整个数组，如果哈希表里存在，返回true，如果不存在，则将其放入哈希表中，代码如下： 
 */
 class Solution {
 public:

@@ -1,9 +1,8 @@
 //Palindrome Linked List 回文链表
-/*
-Given a singly linked list, determine if it is a palindrome.
+
+/*Given a singly linked list, determine if it is a palindrome.
 Follow up:
-Could you do it in O(n) time and O(1) space?
-*/
+Could you do it in O(n) time and O(1) space?*/
 
 /**
  * Definition for singly-linked list.
@@ -14,7 +13,7 @@ Could you do it in O(n) time and O(1) space?
  * };
  */
 
-//遍历一遍存储到vector，前后夹逼对比判断是否是回文
+//法一 遍历一遍存储到vector，前后夹逼对比判断是否是回文
 class Solution {
 public:
 	bool isPalindrome(ListNode* head) {		            
@@ -33,11 +32,10 @@ public:
 		return true;
 	}
 };
-/*
-这道题的Follow Up让我们用O(1)的空间，那就是说我们不能使用stack了，那么如果代替stack的作用呢，用stack的目的是为了利用其后进
+
+/*这道题的Follow Up让我们用O(1)的空间，那就是说我们不能使用stack了，那么如果代替stack的作用呢，用stack的目的是为了利用其后进
 先出的特点，好倒着取出前半段的元素。那么现在我们不用stack了，如何倒着取元素呢。我们可以在找到中点后，将后半段的链表翻转一
-下，这样我们就可以按照回文的顺序比较了，参见代码如下： 
-*/
+下，这样我们就可以按照回文的顺序比较了，参见代码如下： */
 class Solution {
 public:
 	bool isPalindrome(ListNode* head) {

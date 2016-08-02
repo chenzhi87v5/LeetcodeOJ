@@ -1,27 +1,25 @@
 //Contains Duplicate III 包含重复值之三
-/*
-Given an array of integers, find out whether there are two distinct indices i and j in the array such that the difference 
-between nums[i] and nums[j] is at most t and the difference between i and j is at most k. 
-*/
+
+/*Given an array of integers, find out whether there are two distinct indices i and j in the array such that the difference 
+between nums[i] and nums[j] is at most t and the difference between i and j is at most k. */
 
 //求数组是否存在 |nums[i] - nums[j]| <= t && |i - j| <= k True Or False 
-//STL multiset使用方法 
-//维护一个大小为 k 的二叉搜索树
 class Solution {
 public:
 	bool containsNearbyAlmostDuplicate(vector<int>& nums, int k, int t) {
-		multiset<long long> bst;
-		
-		for (int i = 0; i < nums.size(); i++) {	
-			if (bst.size() == k + 1)                           //当BST 超过大小k时 删除最前面的元素 i - k - 1;
-				bst.erase(bst.find(nums[i - k - 1]));      //erase find 函数
+		map<int, int> m;
+		int j = 0;
+		for (int i = 0; i < nums.size(); ++i) {
+			if (i - j > k && m[nums[j]] == j) 
+				m.erase(nums[j++]);
 			
-			auto lb = bst.lower_bound(nums[i] - t);            //lower_bound返回容器中大于等于key的迭代器指针
+			//lower_bound()函数来找一个特定范围，就是大于或等于nums[i] - t的地方
+			auto a = m.lower_bound(nums[i] - t);
 			
-			if (lb != bst.end() && *lb - nums[i] <= t)         //绝对值
+			if (a != m.end() && abs(a->first - nums[i]) <= t) 
 				return true;
 			
-			bst.insert(nums[i]);
+			m[nums[i]] = i;
 		}
 
 		return false;

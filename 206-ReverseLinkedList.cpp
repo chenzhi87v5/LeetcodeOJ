@@ -1,4 +1,4 @@
-//Reverse Linked List 倒置链表  
+//Reverse Linked List 倒置链表     重点考察内容
 /* 
 Reverse a singly linked list.
 click to show more hints.
