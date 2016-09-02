@@ -16,7 +16,7 @@
 using namespace std;
 
 void max_heapify(vector<int> &nums, int parent, int heap_size) {
-	int left_son = parent / 2 + 1;
+	int left_son = parent * 2 + 1;
 	int right_son = left_son + 1;
 	int largest = parent;
 
